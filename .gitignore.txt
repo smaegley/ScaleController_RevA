@@ -1,0 +1,19 @@
+# KiCad backups & autosaves
+*.kicad_prl
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*.kicad_pro-bak
+*-backups/
+*.bak
+*.tmp
+
+# Simulation/exports
+*.net
+*.xml
+*.csv
+*.dcm
+*.swp
+
+# OS stuff
+.DS_Store
+Thumbs.db
