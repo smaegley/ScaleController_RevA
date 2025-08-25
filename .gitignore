@@ -13,12 +13,14 @@ ESP32 sensor board-backups/
 *.orig
 *auto_saved_files*
 
+
 # Other files
 node_modules/
 *.log
 *.tmp
 *.bak
 *.cache
+GIT_NOTES.md
 
 # KiCad backup and temporary files
 *.bak
