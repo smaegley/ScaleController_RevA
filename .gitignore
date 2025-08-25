@@ -12,6 +12,8 @@ ESP32 sensor board-backups/
 .git/
 *.orig
 *auto_saved_files*
+ScaleController_RevA_KEY
+ScaleController_RevA_KEY.pub
 
 
 # Other files
