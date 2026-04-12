@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "ScaleController_Footprints")(type "KiCad")(uri "${KIPRJMOD}/Libraries/Footprints")(options "")(descr ""))
+  (lib (name "Footprints")(type "KiCad")(uri "${KIPRJMOD}/Libraries/Footprints")(options "")(descr ""))
+  (lib (name "MTMM-103-03-T-S-150")(type "KiCad")(uri "${KIPRJMOD}/Project_Library.pretty")(options "")(descr "Samtec MTMM-103-03-T-S-150 connector"))
+)

@@ -108,6 +108,7 @@
         "solder_mask_bridge": "error",
         "starved_thermal": "error",
         "text_height": "ignore",
+        "text_on_edge_cuts": "error",
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
@@ -492,7 +493,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "ESP32 sensor board.kicad_pro",
+    "filename": "ScaleController_RevA.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -1179,12 +1180,16 @@
       "ESP32-C3-02"
     ],
     [
-      "23dfbcac-c55b-465d-b248-a44c230046f1",
-      "Sensors"
+      "1a7f1cfb-b266-4842-99c6-585192ff3edb",
+      "HX711_LoadCell_Summing"
     ],
     [
       "9638f799-907f-4116-a2c8-fb3f1731f620",
       "User interface"
+    ],
+    [
+      "215dc542-b8c7-4909-b854-34402cacdf29",
+      "OLED_Header"
     ]
   ],
   "text_variables": {}

@@ -44,7 +44,7 @@ KiCad project/*autosave*
 
 # Symbol and footprint library cache
 sym-lib-table
-fp-lib-table
+# fp-lib-table is tracked because it uses ${KIPRJMOD} relative paths with custom project libraries
 *.dcm
 
 # Generated output folders
