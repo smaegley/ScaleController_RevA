@@ -52,3 +52,6 @@ sym-lib-table
 # Generated output folders
 fabrication/
 manufacturing/
+
+# Generated review output (regenerate via kicad-cli)
+ScaleController_RevA_schematic.pdf
