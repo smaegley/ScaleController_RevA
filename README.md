@@ -12,7 +12,6 @@ A custom ESP32-based scale controller PCB derived from the KLP-5e ESP32 Sensor B
 	•	4× JST-PH-3 connectors for half-bridge load cells
 	•	1× JST-PH-4 header for I²C OLED (SSD1306 128×64, 1.3”)
 	•	Tare via the on-board BOOT button (SW1, GPIO9) — no extra hardware needed
-	•	Status LED (GPIO19) — planned, to be added to the schematic
 	•	J6 expansion header (5-pin): 3V3, GPIO8, GPIO18, GPIO19, GND
 
 Verified pin map (from the KiCad netlist):
@@ -24,9 +23,9 @@ Verified pin map (from the KiCad netlist):
 | I²C SDA (OLED)  | GPIO4         |                                   |
 | I²C SCL (OLED)  | GPIO3         |                                   |
 | Tare button     | GPIO9         | reuses BOOT button SW1 (on board) |
-| Status LED *    | GPIO19        | to be added to the schematic      |
 
-\* The status LED is not yet wired in the current schematic. Tare reuses the existing BOOT button, so no hardware change is needed for it.
+Rev-A has no dedicated user I/O beyond the BOOT-button tare; status is shown on
+the OLED and in Home Assistant. A physical status LED (GPIO19) is deferred to Rev-B.
 
 ⸻
 

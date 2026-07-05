@@ -11,7 +11,7 @@ Updated 2026-07-05.
 	•	[x] Add JST-PH-4 OLED header (SDA=GPIO4, SCL=GPIO3)
 	•	[x] BOOT (SW1) + EN (SW2) buttons — tare reuses BOOT (GPIO9), no dedicated button needed
 	•	[x] Run ERC — 0 errors (only benign lib-config warnings)
-	•	[ ] Add status LED on GPIO19 (optional; or defer to Rev-B and show status on OLED)
+	•	[x] Status LED — deferred to Rev-B; Rev-A shows status on OLED / Home Assistant
 	•	[ ] Resolve 3 lib_symbol_mismatch warnings (ESP32-C3, LM1117, SS-52400) — sync symbols
 	•	[ ] Route the PCB — see docs/pcb-routing-plan.md (analog HX711 away from antenna + LDO)
 	•	[ ] Run DRC, fix violations (target 0 errors)
@@ -61,6 +61,6 @@ Updated 2026-07-05.
 
 🚀 Roadmap
 	•	[ ] Rev-A prototype bring-up → fix issues
-	•	[ ] Rev-B: minor tweaks (if needed)
+	•	[ ] Rev-B: add physical status LED (GPIO19) + any minor tweaks
 	•	[ ] Prepare kit version: PCB + load cell mounts
 	•	[ ] Write blog/guide on building an ESPHome Scale with this PCB

@@ -9,7 +9,9 @@
 #   I2C  SDA    -> GPIO4
 #   I2C  SCL    -> GPIO3
 #   Tare button -> GPIO9    (reuses the on-board BOOT button SW1; active-low)
-#   Status LED  -> GPIO19   (to be added to the schematic)
+#
+# Note: a physical status LED is deferred to Rev-B. In Rev-A, status is shown
+# on the OLED and in Home Assistant. GPIO18/GPIO19 remain free on header J6.
 #
 # Copy secrets.yaml.example to secrets.yaml and fill in your values before building.
 
@@ -121,21 +123,8 @@ script:
   - id: do_tare
     then:
       - lambda: 'id(tare_offset) = id(hx711_raw).state;'
-      - light.turn_on:
-          id: status_light
-          flash_length: 200ms
 
-# ---- Status LED (GPIO19) ----
-output:
-  - platform: gpio
-    id: status_led_output
-    pin: GPIO19
-
-light:
-  - platform: binary
-    id: status_light
-    name: "Status LED"
-    output: status_led_output
+# Status LED is deferred to Rev-B — tare feedback is shown on the OLED below.
 
 # ---- OLED display (SSD1306 128x64 @ 0x3C) ----
 font:

@@ -217,8 +217,7 @@ gitignored (regenerated output).
 
 ## 11. Open items to resolve before/while routing
 
-- **Status LED on GPIO19** (see TODO): if adding, place it in the digital zone,
-  not the analog zone.
+- **Status LED**: deferred to Rev-B — no change needed for Rev-A routing.
 - Confirm the **antenna keepout dimensions** against the ESP32-C3-WROOM-02 datasheet.
 - Decide whether the HX711 3.3V needs a **dedicated filtered branch** (can be a
   bring-up-time decision; leave footprints for a series ferbead + cap near AVDD).
