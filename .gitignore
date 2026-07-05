@@ -55,3 +55,7 @@ manufacturing/
 
 # Generated review output (regenerate via kicad-cli)
 ScaleController_RevA_schematic.pdf
+
+# ESPHome secrets (never commit real credentials)
+firmware/secrets.yaml
+.esphome/

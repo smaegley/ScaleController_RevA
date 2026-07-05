@@ -5,15 +5,28 @@ A custom ESP32-based scale controller PCB derived from the KLP-5e ESP32 Sensor B
 ⸻
 
 ✨ Features
-	•	ESP32-WROOM-32E module (Wi-Fi + Bluetooth)
-	•	USB-C connector for power and flashing
-	•	Onboard buck regulator (5V → 3.3V)
-	•	HX711 ADC for load cell integration
+	•	ESP32-C3-WROOM-02-H4 module (RISC-V, Wi-Fi + BLE)
+	•	USB-C connector for power and flashing (via on-board CP2102N USB-UART bridge, with USBLC6 ESD protection)
+	•	Onboard LM1117 LDO regulator (5V → 3.3V)
+	•	HX711 24-bit ADC for load cell integration
 	•	4× JST-PH-3 connectors for half-bridge load cells
 	•	1× JST-PH-4 header for I²C OLED (SSD1306 128×64, 1.3”)
-	•	Tare button (GPIO33)
-	•	Status LED (GPIO2)
-	•	Test pads for debug (3V3, GND, SDA, SCL, SCK, DOUT)
+	•	Tare button (GPIO18) — planned, to be added to the schematic
+	•	Status LED (GPIO19) — planned, to be added to the schematic
+	•	J6 expansion header (5-pin): 3V3, GPIO8, GPIO18, GPIO19, GND
+
+Verified pin map (from the KiCad netlist):
+
+| Function        | ESP32-C3 GPIO |
+|-----------------|---------------|
+| HX711 DOUT      | GPIO6         |
+| HX711 PD_SCK    | GPIO5         |
+| I²C SDA (OLED)  | GPIO4         |
+| I²C SCL (OLED)  | GPIO3         |
+| Tare button *   | GPIO18        |
+| Status LED *    | GPIO19        |
+
+\* Tare button and status LED are not yet wired in the current schematic — they are the planned assignments and will be added before layout.
 
 ⸻
 
@@ -27,59 +40,37 @@ Hardware Bring-Up Checklist
 	5.	Tare with empty platform.
 	6.	Calibrate using a known mass (e.g. 1000 g). Compute calibration factor.
 
-Example ESPHome Config
+ESPHome Config
+
+The full, ready-to-build configuration lives in firmware/scale-controller.yaml
+(targets the ESP32-C3 with the verified pin map above). To use it:
+
+	1.	Install ESPHome (pip install esphome or the Home Assistant add-on).
+	2.	cp firmware/secrets.yaml.example firmware/secrets.yaml and fill in your Wi-Fi/API/OTA values.
+	3.	esphome run firmware/scale-controller.yaml (first flash over USB-C, then OTA).
+
+Key pins (see firmware/scale-controller.yaml for the complete config):
 
 i2c:
-  sda: 21
-  scl: 22
+  sda: GPIO4
+  scl: GPIO3
 
 sensor:
   - platform: hx711
-    id: hx
-    name: "Scale Raw"
-    dout_pin: 26
-    clk_pin: 25
+    id: hx711_raw
+    dout_pin: GPIO6
+    clk_pin: GPIO5
     gain: 128
-    update_interval: 100ms
-
-  - platform: template
-    id: weight_g
-    name: "Weight"
-    unit_of_measurement: "g"
-    accuracy_decimals: 1
-    lambda: |-
-      static const float cal = 1.0f;  # replace with your calibration factor
-      return id(hx).state * cal;
-
-binary_sensor:
-  - platform: gpio
-    pin: 33
-    name: "Tare Button"
-    on_press:
-      then:
-        - lambda: |-
-            id(hx).set_offset(id(hx).state);
-
-display:
-  - platform: ssd1306_i2c
-    model: "SSD1306 128x64"
-    address: 0x3C
-    lambda: |-
-      it.printf(0, 0, id(font_large), "%6.1f g", id(weight_g).state);
-
-font:
-  - file: "fonts/Roboto-Bold.ttf"
-    id: font_large
-    size: 24
 
 
 ⸻
 
 📂 Repo Structure
-	•	ScaleController_RevA.kicad_pro — main KiCad project
-	•	*.kicad_sch — schematics (ESP32 core, HX711, load cell headers, OLED header)
-	•	*.kicad_pcb — PCB layout
-	•	fabrication/ — Gerbers, BOM, pick-and-place (to be added)
+	•	KiCad project/ScaleController_RevA.kicad_pro — main KiCad project
+	•	KiCad project/*.kicad_sch — schematics (root + ESP32-C3, HX711 load-cell summing, OLED header; user_interface is nested under the ESP32-C3 sheet)
+	•	KiCad project/ScaleController_RevA.kicad_pcb — PCB layout (footprints placed; routing not yet started)
+	•	firmware/scale-controller.yaml — ESPHome configuration
+	•	fabrication/ — Gerbers, BOM, pick-and-place (generated; gitignored)
 	•	docs/ — bring-up notes, calibration steps
 
 ⸻
@@ -97,8 +88,9 @@ You are free to use, modify, manufacture, and distribute this design, provided t
 ⸻
 
 🚀 Next Steps
-	•	Finalize HX711 child sheet in KiCad
-	•	Route load cell connectors + OLED header
-	•	Generate fabrication files
+	•	Add tare button (GPIO18) + status LED (GPIO19) to the schematic
+	•	Route the PCB (keep HX711 analog away from the antenna + regulator)
+	•	Run DRC and fix violations
+	•	Generate fabrication files (Gerbers, BOM, pick-and-place)
 	•	Build Rev-A prototype and validate
 	•	Document calibration workflow with photos
