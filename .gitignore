@@ -1,4 +1,5 @@
 ESP32 sensor board-backups/
+ScaleController_RevA-backups/
 
 # macOS system files
 .DS_Store
@@ -43,6 +44,7 @@ KiCad project/*autosave*
 *.kicad_prl
 
 # Symbol and footprint library cache
+fp-info-cache
 sym-lib-table
 # fp-lib-table is tracked because it uses ${KIPRJMOD} relative paths with custom project libraries
 *.dcm
