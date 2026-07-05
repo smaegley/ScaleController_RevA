@@ -8,7 +8,7 @@
 #   HX711 PD_SCK-> GPIO5
 #   I2C  SDA    -> GPIO4
 #   I2C  SCL    -> GPIO3
-#   Tare button -> GPIO18   (to be added to the schematic; active-low)
+#   Tare button -> GPIO9    (reuses the on-board BOOT button SW1; active-low)
 #   Status LED  -> GPIO19   (to be added to the schematic)
 #
 # Copy secrets.yaml.example to secrets.yaml and fill in your values before building.
@@ -93,17 +93,19 @@ sensor:
           alpha: 0.2
           send_every: 1
 
-# ---- Tare: physical button (GPIO18) + a button entity in Home Assistant ----
+# ---- Tare: on-board BOOT button (SW1, GPIO9) + a button entity in Home Assistant ----
+# GPIO9 is the BOOT strapping pin. It is only special during power-on/reset;
+# at runtime it is a normal input, so SW1 doubles as the tare button.
 binary_sensor:
   - platform: gpio
     id: tare_button
     name: "Tare Button"
     pin:
-      number: GPIO18
+      number: GPIO9
       mode:
         input: true
         pullup: true
-      inverted: true         # active-low: pressed pulls the pin to GND
+      inverted: true         # active-low: SW1 pulls the pin to GND when pressed
     on_press:
       then:
         - script.execute: do_tare
