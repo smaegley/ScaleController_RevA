@@ -87,7 +87,7 @@ You are free to use, modify, manufacture, and distribute this design, provided t
 ⸻
 
 🚀 Next Steps
-	•	Add tare button (GPIO18) + status LED (GPIO19) to the schematic
+	•	Schematic is complete for Rev-A (tare = BOOT button GPIO9; status LED deferred to Rev-B)
 	•	Route the PCB (keep HX711 analog away from the antenna + regulator)
 	•	Run DRC and fix violations
 	•	Generate fabrication files (Gerbers, BOM, pick-and-place)
