@@ -2288,7 +2288,7 @@
 			(uuid "e3ff1c21-5716-453c-b877-b78885e9cc92")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "NT2")
 					(unit 1)
@@ -2358,7 +2358,7 @@
 			(uuid "582058ff-5068-416a-b5d3-2cb23d28ccf8")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "C15")
 					(unit 1)
@@ -2470,7 +2470,7 @@
 			(uuid "81248e0a-75cd-4749-a4e6-ffd2f7489e3d")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "U6")
 					(unit 1)
@@ -2634,7 +2634,7 @@
 			(uuid "52eeed7e-379e-434d-861d-b4679adc3ea7")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "J5")
 					(unit 1)
@@ -2701,7 +2701,7 @@
 			(uuid "5849280c-3585-4637-b8e9-c8181a7db478")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "R15")
 					(unit 1)
@@ -2768,7 +2768,7 @@
 			(uuid "7dbf118d-ea64-4ccb-8aaa-16b6b9e579e3")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "C13")
 					(unit 1)
@@ -2932,7 +2932,7 @@
 			(uuid "867346c6-4e8d-45f0-a5ba-1e289a44e42c")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "J3")
 					(unit 1)
@@ -2958,7 +2958,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3.3V"
+		(property "Value" "3.3V"
 			(at 87.376 44.958 0)
 			(effects
 				(font
@@ -2997,7 +2997,7 @@
 			(uuid "a3b30bcf-6351-437b-9655-00c8ffce8fba")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "#PWR025")
 					(unit 1)
@@ -3024,7 +3024,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3.3V"
+		(property "Value" "3.3V"
 			(at 92.71 46.99 0)
 			(effects
 				(font
@@ -3063,7 +3063,7 @@
 			(uuid "0028a4dd-1c11-400e-89b7-3dda17e91a0d")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "#PWR028")
 					(unit 1)
@@ -3130,7 +3130,7 @@
 			(uuid "56e2494a-cfc4-4aa8-b401-922e1aadf18b")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "NT3")
 					(unit 1)
@@ -3197,7 +3197,7 @@
 			(uuid "7dddafb2-0478-4f45-81fe-fdeb6403ee7a")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "C17")
 					(unit 1)
@@ -3264,7 +3264,7 @@
 			(uuid "6b4c8605-f0d0-43dd-b9a3-a4a74d6b2ead")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "#FLG03")
 					(unit 1)
@@ -3332,7 +3332,7 @@
 			(uuid "e2122f6a-ff32-4d6a-8cc5-f530a40a3a6b")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "C12")
 					(unit 1)
@@ -3359,7 +3359,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3.3V"
+		(property "Value" "3.3V"
 			(at 58.42 68.5799 90)
 			(effects
 				(font
@@ -3399,7 +3399,7 @@
 			(uuid "1c64738b-c3ab-4545-aa3e-b1a7f4b3b2e1")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "#PWR031")
 					(unit 1)
@@ -3466,7 +3466,7 @@
 			(uuid "0eccfe51-bf90-4dbc-8b61-79f5d8e3ec63")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "#PWR035")
 					(unit 1)
@@ -3657,7 +3657,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3.3V"
+		(property "Value" "3.3V"
 			(at 160.02 54.6099 90)
 			(effects
 				(font
@@ -3697,7 +3697,7 @@
 			(uuid "75df4872-89ef-4732-aaf2-64e7af69983b")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "#PWR036")
 					(unit 1)
@@ -3767,7 +3767,7 @@
 			(uuid "76056fb0-fa9c-4df6-ae2b-6bed6d896d27")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "C16")
 					(unit 1)
@@ -3835,7 +3835,7 @@
 			(uuid "04b427d9-0ea5-47f7-8a10-9127f723ba61")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "C14")
 					(unit 1)
@@ -3902,7 +3902,7 @@
 			(uuid "2d42937f-600b-4c55-89d5-7c0e81bd7d10")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "NT1")
 					(unit 1)
@@ -3969,7 +3969,7 @@
 			(uuid "6708a672-4af9-42c6-991a-e35d321d3c5d")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "#PWR032")
 					(unit 1)
@@ -4035,7 +4035,7 @@
 			(uuid "b8c63c49-b654-4c99-84b7-d89dfc0b8e27")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/1a7f1cfb-b266-4842-99c6-585192ff3edb"
 					(reference "#PWR030")
 					(unit 1)

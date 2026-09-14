@@ -3830,7 +3830,7 @@
 			(uuid "0c09f4d8-97cc-4db3-b38d-f81eddb5b461")
 		)
 		(instances
-			(project "ESP32 sensor board"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "C4")
 					(unit 1)
@@ -4016,7 +4016,7 @@
 			(uuid "38a32c50-8a75-4b2b-bb59-04bf6830b031")
 		)
 		(instances
-			(project "ESP32 sensor board"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "D4")
 					(unit 1)
@@ -4083,7 +4083,7 @@
 			(uuid "d4944dfc-16c0-497f-a3ef-d23b59610779")
 		)
 		(instances
-			(project "ESP32 sensor board"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#PWR016")
 					(unit 1)
@@ -4149,7 +4149,7 @@
 			(uuid "630fe654-6a5a-450a-b0ef-7b3516cd125d")
 		)
 		(instances
-			(project "ESP32 sensor board"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#PWR017")
 					(unit 1)
@@ -4215,7 +4215,7 @@
 			(uuid "6fb287db-6b39-466d-a864-83fd291a2fac")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#PWR06")
 					(unit 1)
@@ -4280,7 +4280,7 @@
 			(uuid "744f0955-16fe-4e4f-bf2b-8b3407e7fb5a")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#PWR010")
 					(unit 1)
@@ -4404,7 +4404,7 @@
 			(uuid "684b8521-0cf6-482f-b347-a0895419ba12")
 		)
 		(instances
-			(project "ESP32 sensor board"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "R10")
 					(unit 1)
@@ -4469,7 +4469,7 @@
 			(uuid "0d8a1a79-2b91-4e9a-8c16-77a29068c151")
 		)
 		(instances
-			(project "ESP32 sensor board"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#PWR03")
 					(unit 1)
@@ -4535,7 +4535,7 @@
 			(uuid "9c89efbe-4014-4de3-8233-930a87eb6e27")
 		)
 		(instances
-			(project "ESP32 sensor board"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#PWR043")
 					(unit 1)
@@ -4705,7 +4705,7 @@
 			(uuid "526e917e-6d25-4394-ade6-4b4fd847e41b")
 		)
 		(instances
-			(project "KLP-5e-ESP32-sensor-board-main_modifications"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "C2")
 					(unit 1)
@@ -4920,7 +4920,7 @@
 			(uuid "d01c2c13-0272-4c04-a627-cf82e3f15b36")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "C3")
 					(unit 1)
@@ -4986,7 +4986,7 @@
 			(uuid "0b33055c-0946-4199-ae83-795d706f09b9")
 		)
 		(instances
-			(project "KLP-5e-ESP32-sensor-board-main_modifications"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#FLG02")
 					(unit 1)
@@ -5051,7 +5051,7 @@
 			(uuid "79a28183-83ca-4967-9cba-7d660c61f0f4")
 		)
 		(instances
-			(project "KLP-5e-ESP32-sensor-board-main_modifications"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#PWR061")
 					(unit 1)
@@ -5118,7 +5118,7 @@
 			(uuid "dbc17a1e-0af7-4bde-a462-ba2fc7e1117a")
 		)
 		(instances
-			(project "ESP32 sensor board"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#PWR047")
 					(unit 1)
@@ -5269,7 +5269,7 @@
 			(uuid "bac9f77a-5339-401e-950c-8c4f3f6eab1d")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "FB1")
 					(unit 1)
@@ -5335,7 +5335,7 @@
 			(uuid "a19a17c4-9e8a-4003-903e-df153a6d437c")
 		)
 		(instances
-			(project "KLP-5e-ESP32-sensor-board-main_modifications"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#PWR060")
 					(unit 1)
@@ -5400,7 +5400,7 @@
 			(uuid "745b4887-ecad-4ef2-9706-7bc5fd18b682")
 		)
 		(instances
-			(project "KLP-5e-ESP32-sensor-board-main_modifications"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#PWR04")
 					(unit 1)
@@ -5760,7 +5760,7 @@
 			(uuid "43bb2738-9185-492d-981c-1340feb0d4be")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "J1")
 					(unit 1)
@@ -5826,7 +5826,7 @@
 			(uuid "73668840-40c4-442e-9972-bdde21d72240")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#FLG07")
 					(unit 1)
@@ -5893,7 +5893,7 @@
 			(uuid "26cf7d74-f8e4-4abd-95e0-80450431e273")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#FLG04")
 					(unit 1)
@@ -6022,7 +6022,7 @@
 			(uuid "f63356ce-d3a7-4026-9f6f-deff795e8989")
 		)
 		(instances
-			(project "ESP32 sensor board"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "F1")
 					(unit 1)
@@ -6284,7 +6284,7 @@
 			(uuid "7f8477c2-2e16-43ab-ab6e-a5fa66dd7c05")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "U2")
 					(unit 1)
@@ -6454,7 +6454,7 @@
 			(uuid "e83df24c-312e-4d0d-bb17-bc431cdee219")
 		)
 		(instances
-			(project "KLP-5e-ESP32-sensor-board-main_modifications"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "C5")
 					(unit 1)
@@ -6521,7 +6521,7 @@
 			(uuid "ba4256ff-cae1-4d2b-aca7-9e73a93bd277")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#PWR05")
 					(unit 1)
@@ -6587,7 +6587,7 @@
 			(uuid "03f84324-5ba8-40f9-a23e-9caeb6060156")
 		)
 		(instances
-			(project ""
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#PWR07")
 					(unit 1)
@@ -6654,7 +6654,7 @@
 			(uuid "64e0215f-62e9-4540-a6e7-53bd7f70f84c")
 		)
 		(instances
-			(project "ESP32 sensor board"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "#PWR059")
 					(unit 1)
@@ -6814,7 +6814,7 @@
 			(uuid "ceb1d903-f7e8-4aa4-a57a-49b55773a2bb")
 		)
 		(instances
-			(project "ESP32 sensor board"
+			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02"
 					(reference "C1")
 					(unit 1)
