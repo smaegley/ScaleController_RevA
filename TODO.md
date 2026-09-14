@@ -17,6 +17,12 @@ Updated 2026-07-05.
 		The three are separate nets — HX711 and OLED are unpowered. ERC is silent because power symbols self-drive.
 		Change the 5 orphan symbols to SparkFun-PowerSymbol:3.3V, then Update PCB from Schematic (expect 138 unconnected).
 	•	[x] PCB zones: deleted the 8 stale F.Cu micro-pours and 2 duplicate In1.Cu GND zones (2026-09-14)
+	•	[ ] Pre-routing prep (found 2026-09-14 from render + file audit):
+		[ ] purge 104 board-level F.SilkS items inherited from KLP-5e (Charger, Sound sensor, MISO/MOSI, …); redo labels at silkscreen step
+		[ ] add 4× mounting holes — none exist on the board
+		[ ] move FB1 from the bottom edge (133.7,123) to beside F1 (~133.0,107.3 rot 0) so VBUS→F1→FB1→U2 runs straight
+		[ ] net classes: Default and 5V_USB vias are 0.3/0.3 (zero annular ring) → 0.5/0.3; add "+5V" pattern to 5V_USB; widen 5V_USB track to 0.5 mm
+		[ ] delete the In2.Cu VBUS and +5V_USB islands → solid 3.3V plane; route those nets on F.Cu
 	•	[ ] Resolve 3 lib_symbol_mismatch warnings (ESP32-C3, LM1117, SS-52400) — sync symbols
 	•	[ ] Route the PCB — see docs/pcb-routing-plan.md (analog HX711 away from antenna + LDO)
 	•	[ ] Run DRC, fix violations (target 0 errors)
