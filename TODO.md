@@ -12,11 +12,11 @@ Updated 2026-07-05.
 	•	[x] BOOT (SW1) + EN (SW2) buttons — tare reuses BOOT (GPIO9), no dedicated button needed
 	•	[x] Run ERC — 0 errors (only benign lib-config warnings)
 	•	[x] Status LED — deferred to Rev-B; Rev-A shows status on OLED / Home Assistant
-	•	[ ] FIX FIRST: unify the three 3.3V power nets. Root/C3/UI sheets use SparkFun-PowerSymbol:3.3V (net "3.3V"),
+	•	[x] Unified the three 3.3V power nets (2026-09-14). Root/C3/UI sheets use SparkFun-PowerSymbol:3.3V (net "3.3V"),
 		HX711 sheet uses power:+3.3V (net "+3.3V", 7 pins incl. U6 VSUP/AVDD/DVDD), OLED sheet uses power:+3V3 (J9 pin 1).
 		The three are separate nets — HX711 and OLED are unpowered. ERC is silent because power symbols self-drive.
 		Change the 5 orphan symbols to SparkFun-PowerSymbol:3.3V, then Update PCB from Schematic (expect 138 unconnected).
-	•	[ ] PCB zones: delete the 8 stale F.Cu micro-pours and 2 of 3 duplicate In1.Cu GND zones; refill; re-run DRC
+	•	[x] PCB zones: deleted the 8 stale F.Cu micro-pours and 2 duplicate In1.Cu GND zones (2026-09-14)
 	•	[ ] Resolve 3 lib_symbol_mismatch warnings (ESP32-C3, LM1117, SS-52400) — sync symbols
 	•	[ ] Route the PCB — see docs/pcb-routing-plan.md (analog HX711 away from antenna + LDO)
 	•	[ ] Run DRC, fix violations (target 0 errors)
