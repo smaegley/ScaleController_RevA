@@ -21,7 +21,7 @@ Current layers: `F.Cu` (signal), `In1.Cu` (power), `In2.Cu` (power), `B.Cu` (sig
 | Layer   | Use                                                        |
 |---------|------------------------------------------------------------|
 | F.Cu    | Primary signal routing + component side                    |
-| In1.Cu  | **Solid, unbroken GND plane** (change type from power→ground in Board Setup) |
+| In1.Cu  | **Solid, unbroken GND plane** (layer type stays "power plane"; KiCad has no separate ground type) |
 | In2.Cu  | Power pours: +3.3V (main), with +5V/VBUS islands as needed |
 | B.Cu    | Secondary signal routing + GND fill                        |
 
