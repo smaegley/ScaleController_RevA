@@ -28,8 +28,8 @@ Updated 2026-07-05.
 	•	[x] Deleted stale KLP-5e test points TP2 (on DOUT) and TP4 (on PD_SCK) from the schematic
 	•	[x] Re-ordered the HX711 cap column (7f945fc); analog section routed so each cap sits beside its pin: C15/C14 by pins 1/3, C17 by pin 6, C13/C12 by pins 7/8, C16 last
 	•	[ ] Resolve 3 lib_symbol_mismatch warnings (ESP32-C3, LM1117, SS-52400) — sync symbols
-	•	[ ] Route the PCB — see docs/pcb-routing-plan.md (analog HX711 away from antenna + LDO)
-	•	[ ] Run DRC, fix violations (target 0 errors)
+	•	[x] Route the PCB — all 141 connections routed 2026-09-14/15 (power, 3.3V, GND, analog, digital); 0 unrouted
+	•	[~] Run DRC — 0 errors; 32 lib_footprint_mismatch + 2 silk-over-edge warnings remain (see lib sync item)
 	•	[ ] Silkscreen: load-cell wiring + corner placement, test points, button labels
 
 ⸻
