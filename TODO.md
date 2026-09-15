@@ -1,7 +1,7 @@
 Scale Controller Rev-A — Project TODO
 
 A running checklist of tasks for hardware, firmware, and documentation.
-Updated 2026-07-05.
+Updated 2026-09-15. See docs/status-2026-09-15.md for the current summary.
 
 ⸻
 
