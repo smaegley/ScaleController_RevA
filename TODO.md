@@ -23,10 +23,10 @@ Updated 2026-07-05.
 		[x] moved FB1 from the bottom edge (133.7,123) to beside F1 (~133.0,107.3 rot 0) so VBUS→F1→FB1→U2 runs straight
 		[x] net classes: Default and 5V_USB vias are 0.3/0.3 (zero annular ring) → 0.5/0.3; add "+5V" pattern to 5V_USB; widen 5V_USB track to 0.5 mm
 		[x] deleted the In2.Cu VBUS and +5V_USB islands → solid 3.3V plane; route those nets on F.Cu
-	•	[ ] FIX: HX711 input filter is wired as a SERIES cap — S+ → R15 → C12 → INA+ (A+ net has only C12.2 + U6.8), same for R16/C13/INA-.
+	•	[x] FIXED (7408cba): HX711 input filter was wired as a SERIES cap — S+ → R15 → C12 → INA+ (A+ net has only C12.2 + U6.8), same for R16/C13/INA-.
 		A 4.7 nF in series blocks the DC bridge signal. Rewire so R15.1 goes straight to INA+ and C12 shunts that node to AGND (mirror for C13).
-	•	[ ] Delete stale KLP-5e test points TP2 (on DOUT) and TP4 (on PD_SCK) from the schematic
-	•	[ ] Re-order the HX711 cap column so each cap sits beside its pin: C15/C14 by pins 1/3, C17 by pin 6, C13/C12 by pins 7/8, C16 last
+	•	[x] Deleted stale KLP-5e test points TP2 (on DOUT) and TP4 (on PD_SCK) from the schematic
+	•	[x] Re-ordered the HX711 cap column (7f945fc); analog section routed so each cap sits beside its pin: C15/C14 by pins 1/3, C17 by pin 6, C13/C12 by pins 7/8, C16 last
 	•	[ ] Resolve 3 lib_symbol_mismatch warnings (ESP32-C3, LM1117, SS-52400) — sync symbols
 	•	[ ] Route the PCB — see docs/pcb-routing-plan.md (analog HX711 away from antenna + LDO)
 	•	[ ] Run DRC, fix violations (target 0 errors)
