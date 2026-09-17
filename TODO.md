@@ -29,11 +29,11 @@ Updated 2026-09-15. See docs/status-2026-09-15.md for the current summary.
 	•	[x] Re-ordered the HX711 cap column (7f945fc); analog section routed so each cap sits beside its pin: C15/C14 by pins 1/3, C17 by pin 6, C13/C12 by pins 7/8, C16 last
 	•	[x] Load-cell connectors → JST PH B3B-PH-K (friction lock) and on-board inversion of one cell pair (2026-09-17)
 	•	[x] E+/E- naming tidied: E+ is the 3.3V-side excitation (NT2), E- the GND side (NT3)
-	•	[ ] Silkscreen: label load-cell sockets by wire colour (all four plug identically: pin 1 / red centre / pin 3)
+	•	[x] Silkscreen: load-cell sockets labelled with wire-colour legend
 	•	[ ] Resolve 3 lib_symbol_mismatch warnings (ESP32-C3, LM1117, SS-52400) — sync symbols
 	•	[x] Route the PCB — all 141 connections routed 2026-09-14/15 (power, 3.3V, GND, analog, digital); 0 unrouted
 	•	[x] Run DRC — 0 errors, 0 unrouted; footprints refreshed from KiCad 9 libs. 4 warnings left: J1/U3 lib mismatch (intentional: bridged mask + solid zone connect) and 2 U3-outline-vs-edge silk notes
-	•	[ ] Silkscreen: load-cell wiring + corner placement, test points, button labels
+	•	[x] Silkscreen: socket labels LC1-4 + wiring legend, button labels, J6/J9 pin names, LED names, board name/date (2026-09-17)
 
 ⸻
 
