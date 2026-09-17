@@ -1919,7 +1919,7 @@
 		)
 		(uuid "fdb52a34-c368-41e7-be1d-dd5093d84172")
 	)
-	(label "E+"
+	(label "E-"
 		(at 185.42 59.69 180)
 		(effects
 			(font
@@ -2009,7 +2009,7 @@
 		)
 		(uuid "49cd7ec3-a3ae-45e8-8ae9-a5729afd6e2f")
 	)
-	(label "E-"
+	(label "E+"
 		(at 184.15 74.93 180)
 		(effects
 			(font
@@ -2019,7 +2019,7 @@
 		)
 		(uuid "5a87eff0-6b38-4a23-bd8b-af8f88ff7f34")
 	)
-	(label "E+"
+	(label "E-"
 		(at 185.42 97.79 180)
 		(effects
 			(font
@@ -2029,7 +2029,7 @@
 		)
 		(uuid "6237879d-f5ba-460d-ab9c-f5e864504672")
 	)
-	(label "E-"
+	(label "E+"
 		(at 184.15 54.61 180)
 		(effects
 			(font
@@ -2039,7 +2039,7 @@
 		)
 		(uuid "76c75e32-fabb-4c90-bf9c-7dcfc588eeb4")
 	)
-	(label "E+"
+	(label "E-"
 		(at 184.15 69.85 180)
 		(effects
 			(font
@@ -2129,7 +2129,7 @@
 		)
 		(uuid "bf79bad5-4a2b-453f-8122-114df289992b")
 	)
-	(label "E-"
+	(label "E+"
 		(at 185.42 83.82 180)
 		(effects
 			(font
@@ -2139,7 +2139,7 @@
 		)
 		(uuid "c914f075-d872-40d1-94fc-e73436b952a4")
 	)
-	(label "E+"
+	(label "E-"
 		(at 185.42 88.9 180)
 		(effects
 			(font
@@ -2169,7 +2169,7 @@
 		)
 		(uuid "eb30fa09-748f-4af1-b4ec-728b6de84bcf")
 	)
-	(label "E-"
+	(label "E+"
 		(at 185.42 102.87 180)
 		(effects
 			(font
