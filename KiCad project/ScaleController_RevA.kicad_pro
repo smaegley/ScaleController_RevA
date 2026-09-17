@@ -126,7 +126,7 @@
         "max_error": 0.005,
         "min_clearance": 0.0,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.2,
+        "min_copper_edge_clearance": 0.3,
         "min_groove_width": 0.0,
         "min_hole_clearance": 0.2,
         "min_hole_to_hole": 0.35,
@@ -512,7 +512,7 @@
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
-        "via_diameter": 0.5,
+        "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
       },
@@ -530,7 +530,7 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.5,
         "via_diameter": 0.6,
-        "via_drill": 0.4,
+        "via_drill": 0.3,
         "wire_width": 6
       },
       {
@@ -546,7 +546,7 @@
         "priority": 1,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.5,
-        "via_diameter": 0.5,
+        "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
       },
@@ -564,7 +564,7 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.5,
         "via_diameter": 0.6,
-        "via_drill": 0.4,
+        "via_drill": 0.3,
         "wire_width": 6
       },
       {
@@ -580,7 +580,7 @@
         "priority": 3,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
-        "via_diameter": 0.5,
+        "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
       },
@@ -597,7 +597,7 @@
         "priority": 4,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.3,
-        "via_diameter": 0.5,
+        "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
       },
@@ -614,7 +614,7 @@
         "priority": 5,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.3,
-        "via_diameter": 0.5,
+        "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
       },
@@ -631,7 +631,7 @@
         "priority": 6,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
-        "via_diameter": 0.5,
+        "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
       },
@@ -665,7 +665,7 @@
         "priority": 8,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
-        "via_diameter": 0.5,
+        "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
       },
@@ -682,7 +682,7 @@
         "priority": 9,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
-        "via_diameter": 0.5,
+        "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
       }

@@ -30,6 +30,8 @@ Updated 2026-09-15. See docs/status-2026-09-15.md for the current summary.
 	•	[x] Load-cell connectors → JST PH B3B-PH-K (friction lock) and on-board inversion of one cell pair (2026-09-17)
 	•	[x] E+/E- naming tidied: E+ is the 3.3V-side excitation (NT2), E- the GND side (NT3)
 	•	[x] Silkscreen: load-cell sockets labelled with wire-colour legend
+	•	[x] DFM pass for PCBWay (2026-09-17): all vias 0.6/0.3 (0.15 ring), ESP32 module ground-grid pads 0.6, USB-C swapped to HRO TYPE-C-31-M-12 (SMD pins), CC1/CC2 5.1k pull-downs added, copper-to-edge rule 0.3
+	•	[ ] Order note for PCBWay: one 0.55/0.3 via (0.125 ring) at U4-VBUS; J1 footprint peg-to-shell-leg hole spacing 0.35 (manufacturer geometry)
 	•	[ ] Resolve 3 lib_symbol_mismatch warnings (ESP32-C3, LM1117, SS-52400) — sync symbols
 	•	[x] Route the PCB — all 141 connections routed 2026-09-14/15 (power, 3.3V, GND, analog, digital); 0 unrouted
 	•	[x] Run DRC — 0 errors, 0 unrouted; footprints refreshed from KiCad 9 libs. 4 warnings left: J1/U3 lib mismatch (intentional: bridged mask + solid zone connect) and 2 U3-outline-vs-edge silk notes
