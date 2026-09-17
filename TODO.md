@@ -27,6 +27,9 @@ Updated 2026-09-15. See docs/status-2026-09-15.md for the current summary.
 		A 4.7 nF in series blocks the DC bridge signal. Rewire so R15.1 goes straight to INA+ and C12 shunts that node to AGND (mirror for C13).
 	•	[x] Deleted stale KLP-5e test points TP2 (on DOUT) and TP4 (on PD_SCK) from the schematic
 	•	[x] Re-ordered the HX711 cap column (7f945fc); analog section routed so each cap sits beside its pin: C15/C14 by pins 1/3, C17 by pin 6, C13/C12 by pins 7/8, C16 last
+	•	[x] Load-cell connectors → JST PH B3B-PH-K (friction lock) and on-board inversion of one cell pair (2026-09-17)
+	•	[ ] Tidy E+/E- naming: as wired, net "E+" ties to GND (NT3) and "E-" to 3.3V (NT2). Functionally right; swap the two labels globally for clarity
+	•	[ ] Silkscreen: label load-cell sockets by wire colour (all four plug identically: pin 1 / red centre / pin 3)
 	•	[ ] Resolve 3 lib_symbol_mismatch warnings (ESP32-C3, LM1117, SS-52400) — sync symbols
 	•	[x] Route the PCB — all 141 connections routed 2026-09-14/15 (power, 3.3V, GND, analog, digital); 0 unrouted
 	•	[x] Run DRC — 0 errors, 0 unrouted; footprints refreshed from KiCad 9 libs. 4 warnings left: J1/U3 lib mismatch (intentional: bridged mask + solid zone connect) and 2 U3-outline-vs-edge silk notes
