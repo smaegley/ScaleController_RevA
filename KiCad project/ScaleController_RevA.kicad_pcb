@@ -17863,6 +17863,33 @@
 			)
 		)
 	)
+	(footprint "Footprints:OLED_1.3in_I2C_module_plugged"
+		(layer "F.Cu")
+		(uuid "fb4080ea-4a0e-43b5-a939-d7b6e2187cd4")
+		(at 196.775 103.205)
+		(descr "Mechanical placeholder: 1.3in I2C OLED module plugged into J9 (nominal 35.4 x 33.5 mm)")
+		(property "Reference" "DISP1"
+			(at -3 -3.81 90)
+			(layer "F.Fab")
+			(uuid "df931221-e7f5-4255-b316-40277d2ad846")
+			(effects (font (size 0.8 0.8) (thickness 0.12)))
+		)
+		(property "Value" "OLED 1.3in module (fit check only)"
+			(at 3 -3.81 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "272e88a2-aa24-4ff0-ab95-e0c3cd7e4420")
+			(effects (font (size 0.8 0.8) (thickness 0.12)))
+		)
+		(attr board_only exclude_from_pos_files exclude_from_bom)
+		(fp_rect (start -0.6 -21.51) (end 0.6 13.89) (stroke (width 0.1) (type default)) (fill no) (layer "F.Fab") (uuid "fe6357c3-2d3e-4097-a438-32a4ca8730af"))
+		(fp_text user "OLED module plugged into J9 (mechanical)" (at 5.5 -3.81 90) (layer "Cmts.User") (uuid "a65a4c30-b366-40fe-a183-b21e2cbe0ea3") (effects (font (size 0.8 0.8) (thickness 0.12))))
+		(model "${KIPRJMOD}/Libraries/3D models/OLED_1.3in_I2C_module_plugged.wrl"
+			(offset (xyz 0 0 0))
+			(scale (xyz 1 1 1))
+			(rotate (xyz 0 0 0))
+		)
+	)
 	(gr_line
 		(start 111.5 73.199999)
 		(end 111.5 124)
