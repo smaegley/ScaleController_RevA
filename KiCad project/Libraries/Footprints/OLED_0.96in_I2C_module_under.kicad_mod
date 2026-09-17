@@ -1,0 +1,26 @@
+	(footprint "OLED_0.96in_I2C_module_under"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Mechanical placeholder: 0.96in I2C OLED module (nominal 27 x 27.5 mm) plugged into the back-side socket J9, lying flat under the board")
+	(property "Reference" "DISP1"
+		(at -12 -3.81 0)
+		(layer "B.Fab")
+		(effects (font (size 1 1) (thickness 0.15)) (justify mirror))
+)
+	(property "Value" "OLED 0.96in module (fit check only)"
+		(at -12 -1.5 0)
+		(layer "B.Fab")
+		(hide yes)
+		(effects (font (size 0.8 0.8) (thickness 0.12)) (justify mirror))
+)
+	(attr board_only exclude_from_pos_files exclude_from_bom)
+	(fp_rect (start -25.2 -17.31) (end 2.3 9.69) (stroke (width 0.1) (type default)) (fill no) (layer "B.Fab") )
+	(fp_text user "0.96in OLED module under board, plugged into J9 (mechanical)" (at -12 -6.5 0) (layer "Cmts.User") (effects (font (size 0.8 0.8) (thickness 0.12))))
+	(model "${KIPRJMOD}/Libraries/3D models/OLED_0.96in_I2C_module_under.wrl"
+		(offset (xyz 0 0 0))
+		(scale (xyz 1 1 1))
+		(rotate (xyz 0 0 0))
+)
+)

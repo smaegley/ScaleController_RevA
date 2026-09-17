@@ -2740,22 +2740,10 @@
 		(uuid "03eba6d1-b478-44ee-bba5-ca85f9618ced")
 	)
 	(junction
-		(at 87.63 34.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "12ef7d6c-690b-4585-94cf-4f0e49af9354")
-	)
-	(junction
 		(at 36.83 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "28b73732-8049-4036-8bc8-a869bf9766f3")
-	)
-	(junction
-		(at 87.63 26.67)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "52345df9-a264-4f40-97f1-6fb6b5befa34")
 	)
 	(junction
 		(at 88.9 87.63)
