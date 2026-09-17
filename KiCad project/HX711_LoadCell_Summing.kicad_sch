@@ -927,14 +927,14 @@
 				(pin passive line
 					(at -10.16 2.54 0)
 					(length 5.08)
-					(name "01"
+					(name "1"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "01"
+					(number "1"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -945,14 +945,14 @@
 				(pin passive line
 					(at -10.16 0 0)
 					(length 5.08)
-					(name "02"
+					(name "2"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "02"
+					(number "2"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -963,14 +963,14 @@
 				(pin passive line
 					(at -10.16 -2.54 0)
 					(length 5.08)
-					(name "03"
+					(name "3"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "03"
+					(number "3"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -1451,6 +1451,16 @@
 	)
 	(wire
 		(pts
+			(xy 185.42 88.9) (xy 194.31 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13f30cbf-77ea-4a74-b965-c99e8023394c")
+	)
+	(wire
+		(pts
 			(xy 102.87 88.9) (xy 111.76 88.9)
 		)
 		(stroke
@@ -1541,26 +1551,6 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 54.61) (xy 194.31 54.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b184387-6dd2-40c3-bc96-c76a41adfb02")
-	)
-	(wire
-		(pts
-			(xy 185.42 88.9) (xy 194.31 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6437cda4-ff00-4c49-a710-e35844ced1fc")
-	)
-	(wire
-		(pts
 			(xy 184.15 69.85) (xy 194.31 69.85)
 		)
 		(stroke
@@ -1601,16 +1591,6 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 59.69) (xy 194.31 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "765e7d31-0eb7-4f3c-afdf-cfbee7da4901")
-	)
-	(wire
-		(pts
 			(xy 184.15 74.93) (xy 194.31 74.93)
 		)
 		(stroke
@@ -1631,16 +1611,6 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 83.82) (xy 194.31 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7bae1580-7a69-41d5-ab64-0526469340d1")
-	)
-	(wire
-		(pts
 			(xy 34.29 77.47) (xy 36.83 77.47)
 		)
 		(stroke
@@ -1648,6 +1618,16 @@
 			(type default)
 		)
 		(uuid "7fd0459c-10e0-427f-ba20-2ecae875e89d")
+	)
+	(wire
+		(pts
+			(xy 185.42 83.82) (xy 194.31 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81ca0368-1706-4dfa-89ec-84bea6fc3987")
 	)
 	(wire
 		(pts
@@ -1811,6 +1791,16 @@
 	)
 	(wire
 		(pts
+			(xy 172.72 59.69) (xy 194.31 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c791d35e-45d3-48cc-8703-176dd47b4e2e")
+	)
+	(wire
+		(pts
 			(xy 87.63 48.26) (xy 87.63 58.42)
 		)
 		(stroke
@@ -1881,6 +1871,16 @@
 	)
 	(wire
 		(pts
+			(xy 172.72 54.61) (xy 194.31 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f56cf52a-4bb6-4371-8e91-50a35defb0c7")
+	)
+	(wire
+		(pts
 			(xy 62.23 62.23) (xy 66.04 62.23)
 		)
 		(stroke
@@ -1920,7 +1920,7 @@
 		(uuid "fdb52a34-c368-41e7-be1d-dd5093d84172")
 	)
 	(label "E+"
-		(at 185.42 54.61 180)
+		(at 185.42 59.69 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2030,7 +2030,7 @@
 		(uuid "6237879d-f5ba-460d-ab9c-f5e864504672")
 	)
 	(label "E-"
-		(at 185.42 59.69 180)
+		(at 184.15 54.61 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2130,7 +2130,7 @@
 		(uuid "bf79bad5-4a2b-453f-8122-114df289992b")
 	)
 	(label "E-"
-		(at 185.42 88.9 180)
+		(at 185.42 83.82 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2140,7 +2140,7 @@
 		(uuid "c914f075-d872-40d1-94fc-e73436b952a4")
 	)
 	(label "E+"
-		(at 185.42 83.82 180)
+		(at 185.42 88.9 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2568,7 +2568,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MTMM-103-03-T-S-150:SAMTEC_MTMM-103-03-T-S-150"
+		(property "Footprint" "Connector_JST:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical"
 			(at 204.47 72.39 0)
 			(effects
 				(font
@@ -2686,13 +2686,22 @@
 				(hide yes)
 			)
 		)
-		(pin "02"
+		(property "Comments" ""
+			(at 204.47 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
 			(uuid "d11b7b71-9117-437b-bcf1-92c950cc4a7e")
 		)
-		(pin "01"
+		(pin "1"
 			(uuid "e99213c5-4e44-43fc-8e4d-076f9ec53951")
 		)
-		(pin "03"
+		(pin "3"
 			(uuid "52eeed7e-379e-434d-861d-b4679adc3ea7")
 		)
 		(instances
@@ -2866,7 +2875,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MTMM-103-03-T-S-150:SAMTEC_MTMM-103-03-T-S-150"
+		(property "Footprint" "Connector_JST:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical"
 			(at 204.47 57.15 0)
 			(effects
 				(font
@@ -2984,13 +2993,22 @@
 				(hide yes)
 			)
 		)
-		(pin "03"
+		(property "Comments" ""
+			(at 204.47 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
 			(uuid "290a38cc-00d8-4cfd-9951-e84a8869d470")
 		)
-		(pin "02"
+		(pin "2"
 			(uuid "7b27bf9d-d473-46b1-9523-340267b84307")
 		)
-		(pin "01"
+		(pin "1"
 			(uuid "867346c6-4e8d-45f0-a5ba-1e289a44e42c")
 		)
 		(instances
@@ -3564,7 +3582,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MTMM-103-03-T-S-150:SAMTEC_MTMM-103-03-T-S-150"
+		(property "Footprint" "Connector_JST:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical"
 			(at 204.47 86.36 0)
 			(effects
 				(font
@@ -3682,13 +3700,22 @@
 				(hide yes)
 			)
 		)
-		(pin "02"
+		(property "Comments" ""
+			(at 204.47 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
 			(uuid "3301b2c3-883b-418d-90f3-7c2e2cde5bd8")
 		)
-		(pin "01"
+		(pin "1"
 			(uuid "a6a36468-d1e9-4a3d-beb1-15ddd17a804d")
 		)
-		(pin "03"
+		(pin "3"
 			(uuid "d953593a-57a3-4390-aece-6abf05c67546")
 		)
 		(instances
@@ -4133,7 +4160,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MTMM-103-03-T-S-150:SAMTEC_MTMM-103-03-T-S-150"
+		(property "Footprint" "Connector_JST:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical"
 			(at 204.47 100.33 0)
 			(effects
 				(font
@@ -4251,13 +4278,22 @@
 				(hide yes)
 			)
 		)
-		(pin "02"
+		(property "Comments" ""
+			(at 204.47 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
 			(uuid "8fb07e29-7e8b-4fb9-82f0-71fbfc4f3efd")
 		)
-		(pin "01"
+		(pin "1"
 			(uuid "42566541-72d1-4858-8373-dd1e88a4bfb5")
 		)
-		(pin "03"
+		(pin "3"
 			(uuid "41cf16f2-028d-49d0-8823-4b0479b0d456")
 		)
 		(instances
