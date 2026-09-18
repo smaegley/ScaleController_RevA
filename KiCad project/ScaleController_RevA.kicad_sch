@@ -5,10 +5,11 @@
 	(uuid "16c571a0-8550-4f05-972c-22b0701cbf02")
 	(paper "A4")
 	(title_block
-		(title "ESP32 sensor board")
-		(date "2024-11-22")
-		(rev "1")
-		(comment 1 "OLED Header")
+		(title "Scale Controller")
+		(date "2026-09-18")
+		(rev "A")
+		(company "Steve Maegley")
+		(comment 1 "Root: USB-C, power, sheet index")
 	)
 	(lib_symbols
 		(symbol "Connector:USB_C_Receptacle_USB2.0_16P"
@@ -2643,7 +2644,7 @@
 		)
 		(uuid "f028a766-0902-4025-81ca-987e4cc7327f")
 	)
-	(text_box "The CP2102 module does not require the USB 3.x TX+/TX- and RX+/RX- pins, \nas it only supports USB 2.0 communication via D+ and D-."
+	(text_box "Only the USB 2.0 D+/D- pairs are used: the ESP32-C3's built-in\nUSB-Serial/JTAG (GPIO18/19) handles programming and logging.\nThe USB 3.x TX/RX pairs of the receptacle are not connected."
 		(exclude_from_sim no)
 		(at 125.73 13.97 0)
 		(size 33.655 12.065)
@@ -2663,7 +2664,7 @@
 		)
 		(uuid "7ff9ea84-b5ed-4644-8d77-399674277d6a")
 	)
-	(text_box "See ESP32 S3 Dev Kit reference design:\nhttps://txplo.re/esp32s3ref"
+	(text_box "Reset/boot circuit and USB per the ESP32-C3-WROOM-02 datasheet,\nsection 9 Peripheral Schematics. Strapping pins GPIO2/8/9 are\npulled up on the ESP32-C3-02 sheet."
 		(exclude_from_sim no)
 		(at 128.905 188.2775 0)
 		(size 43.815 7.3025)

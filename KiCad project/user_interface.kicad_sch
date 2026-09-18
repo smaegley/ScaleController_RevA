@@ -5,9 +5,11 @@
 	(uuid "6a3f52f3-16a6-4e94-9323-604014356da8")
 	(paper "A4")
 	(title_block
-		(title "ESP32 sensor board")
-		(rev "1")
-		(comment 1 "OLED Header")
+		(title "Scale Controller")
+		(date "2026-09-18")
+		(rev "A")
+		(company "Steve Maegley")
+		(comment 1 "Reset / boot buttons, expansion header J6")
 	)
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_01x05"

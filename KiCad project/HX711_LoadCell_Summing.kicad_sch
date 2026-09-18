@@ -5,9 +5,11 @@
 	(uuid "39e38bb3-4db2-4550-82a9-a731a177d793")
 	(paper "A4")
 	(title_block
-		(title "ESP32 sensor board")
-		(rev "1")
-		(comment 1 "OLED Header")
+		(title "Scale Controller")
+		(date "2026-09-18")
+		(rev "A")
+		(company "Steve Maegley")
+		(comment 1 "HX711 and load-cell sockets")
 	)
 	(lib_symbols
 		(symbol "Analog_ADC:HX711"

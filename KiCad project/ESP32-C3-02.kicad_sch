@@ -5,10 +5,11 @@
 	(uuid "3d6584ba-6c07-4114-be5d-755a1af30de4")
 	(paper "A4")
 	(title_block
-		(title "ESP32 sensor board")
-		(date "2024-11-23")
-		(rev "1")
-		(comment 1 "OLED Header")
+		(title "Scale Controller")
+		(date "2026-09-18")
+		(rev "A")
+		(company "Steve Maegley")
+		(comment 1 "ESP32-C3 module, native USB, pull-ups, status LED")
 	)
 	(lib_symbols
 		(symbol "Device:R"
