@@ -3442,7 +3442,7 @@
 	)
 	(rectangle
 		(start 19.05 15.875)
-		(end 140.97 130.81)
+		(end 160.02 130.81)
 		(stroke
 			(width 0)
 			(type default)
@@ -3452,7 +3452,7 @@
 		)
 		(uuid 7927148b-e862-4f0f-ac49-e8f02b7eef1d)
 	)
-	(text "Activity LEDs"
+	(text "Status LED (GPIO7, active-low)"
 		(exclude_from_sim no)
 		(at 105.918 115.062 0)
 		(effects
@@ -3462,7 +3462,7 @@
 		)
 		(uuid "4330cbc8-bbae-41c6-b735-bcd145cdb194")
 	)
-	(text "USB module"
+	(text "USB ESD, strapping / I2C pull-ups, status LED"
 		(exclude_from_sim no)
 		(at 24.892 14.224 0)
 		(effects

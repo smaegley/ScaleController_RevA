@@ -1341,26 +1341,6 @@
 		)
 		(uuid "bb4dc72e-4062-4a31-850e-bcc57a332361")
 	)
-	(text_box "To learn more about the boot mode selection,\nsee documentation at https://txplo.re/esp32boot"
-		(exclude_from_sim no)
-		(at 198.755 131.445 0)
-		(size 29.845 11.43)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "c68aa48f-4a91-43be-9354-3729d8b4b1dd")
-	)
 	(junction
 		(at 151.13 64.77)
 		(diameter 0)
@@ -3551,72 +3531,6 @@
 			(project "ScaleController_RevA"
 				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/09ec4a32-ddff-43cd-8e21-9ef822101853/9638f799-907f-4116-a2c8-fb3f1731f620"
 					(reference "SW1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 66.04 132.08 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fd638927-643b-4259-8d62-e9f5d177e46a")
-		(property "Reference" "#PWR058"
-			(at 66.04 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 66.04 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 66.04 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 66.04 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 66.04 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0da254f0-88c1-40cd-b5a1-167501783ef5")
-		)
-		(instances
-			(project "ScaleController_RevA"
-				(path "/16c571a0-8550-4f05-972c-22b0701cbf02/09ec4a32-ddff-43cd-8e21-9ef822101853/9638f799-907f-4116-a2c8-fb3f1731f620"
-					(reference "#PWR058")
 					(unit 1)
 				)
 			)
