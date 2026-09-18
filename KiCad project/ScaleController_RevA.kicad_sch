@@ -1097,7 +1097,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "800-mA 15-V linear voltage regulator, SOT-223"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1187,16 +1187,6 @@
 				)
 			)
 			(property "MP" "LM1117MPX-3.3/NOPB"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "\n                        \n                            800-mA 15-V linear voltage regulator\n                        \n"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5964,16 +5954,6 @@
 			)
 		)
 		(property "MP" "LM1117MPX-3.3/NOPB"
-			(at 62.23 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "\n                        \n                            800-mA 15-V linear voltage regulator\n                        \n"
 			(at 62.23 90.17 0)
 			(effects
 				(font

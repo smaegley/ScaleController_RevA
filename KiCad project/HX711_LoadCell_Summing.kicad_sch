@@ -785,7 +785,7 @@
 					(justify left bottom)
 				)
 			)
-			(property "Value" "MTMM-103-03-T-S-150"
+			(property "Value" "B3B-PH-K-S"
 				(at -5.08 -7.62 0)
 				(effects
 					(font
@@ -794,7 +794,7 @@
 					(justify left bottom)
 				)
 			)
-			(property "Footprint" "MTMM-103-03-T-S-150:SAMTEC_MTMM-103-03-T-S-150"
+			(property "Footprint" "Connector_JST:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical"
 				(at 0 0 0)
 				(effects
 					(font
@@ -804,7 +804,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" ""
+			(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -813,7 +813,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "JST PH 3-pin 2.00 mm top-entry shrouded header, load-cell socket"
 				(at 0 0 0)
 				(effects
 					(font
@@ -822,17 +822,7 @@
 					(hide yes)
 				)
 			)
-			(property "MF" "Samtec"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "Connector Header Through Hole 3 position 0.079 (2.00mm)"
+			(property "MF" "JST"
 				(at 0 0 0)
 				(effects
 					(font
@@ -842,7 +832,7 @@
 					(hide yes)
 				)
 			)
-			(property "Package" "None"
+			(property "MP" "B3B-PH-K-S"
 				(at 0 0 0)
 				(effects
 					(font
@@ -852,57 +842,7 @@
 					(hide yes)
 				)
 			)
-			(property "Price" "None"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Check_prices" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=eda"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "SnapEDA_Link" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=snap"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MP" "MTMM-103-03-T-S-150"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Availability" "In Stock"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MANUFACTURER" "SAMTEC"
+			(property "MANUFACTURER" "JST"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2559,7 +2499,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MTMM-103-03-T-S-150"
+		(property "Value" "B3B-PH-K-S"
 			(at 210.82 73.6599 0)
 			(effects
 				(font
@@ -2578,7 +2518,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 204.47 72.39 0)
 			(effects
 				(font
@@ -2587,7 +2527,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "JST PH 3-pin 2.00 mm top-entry shrouded header, load-cell socket"
 			(at 204.47 72.39 0)
 			(effects
 				(font
@@ -2596,17 +2536,7 @@
 				(hide yes)
 			)
 		)
-		(property "MF" "Samtec"
-			(at 204.47 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "Connector Header Through Hole 3 position 0.079 (2.00mm)"
+		(property "MF" "JST"
 			(at 204.47 72.39 0)
 			(effects
 				(font
@@ -2616,7 +2546,7 @@
 				(hide yes)
 			)
 		)
-		(property "Package" "None"
+		(property "MP" "B3B-PH-K-S"
 			(at 204.47 72.39 0)
 			(effects
 				(font
@@ -2626,57 +2556,7 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "None"
-			(at 204.47 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=eda"
-			(at 204.47 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=snap"
-			(at 204.47 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MP" "MTMM-103-03-T-S-150"
-			(at 204.47 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Availability" "In Stock"
-			(at 204.47 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "SAMTEC"
+		(property "MANUFACTURER" "JST"
 			(at 204.47 72.39 0)
 			(effects
 				(font
@@ -2866,7 +2746,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MTMM-103-03-T-S-150"
+		(property "Value" "B3B-PH-K-S"
 			(at 210.82 58.4199 0)
 			(effects
 				(font
@@ -2885,7 +2765,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 204.47 57.15 0)
 			(effects
 				(font
@@ -2894,7 +2774,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "JST PH 3-pin 2.00 mm top-entry shrouded header, load-cell socket"
 			(at 204.47 57.15 0)
 			(effects
 				(font
@@ -2903,17 +2783,7 @@
 				(hide yes)
 			)
 		)
-		(property "MF" "Samtec"
-			(at 204.47 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "Connector Header Through Hole 3 position 0.079 (2.00mm)"
+		(property "MF" "JST"
 			(at 204.47 57.15 0)
 			(effects
 				(font
@@ -2923,7 +2793,7 @@
 				(hide yes)
 			)
 		)
-		(property "Package" "None"
+		(property "MP" "B3B-PH-K-S"
 			(at 204.47 57.15 0)
 			(effects
 				(font
@@ -2933,57 +2803,7 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "None"
-			(at 204.47 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=eda"
-			(at 204.47 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=snap"
-			(at 204.47 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MP" "MTMM-103-03-T-S-150"
-			(at 204.47 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Availability" "In Stock"
-			(at 204.47 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "SAMTEC"
+		(property "MANUFACTURER" "JST"
 			(at 204.47 57.15 0)
 			(effects
 				(font
@@ -3573,7 +3393,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MTMM-103-03-T-S-150"
+		(property "Value" "B3B-PH-K-S"
 			(at 210.82 87.6299 0)
 			(effects
 				(font
@@ -3592,7 +3412,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 204.47 86.36 0)
 			(effects
 				(font
@@ -3601,7 +3421,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "JST PH 3-pin 2.00 mm top-entry shrouded header, load-cell socket"
 			(at 204.47 86.36 0)
 			(effects
 				(font
@@ -3610,17 +3430,7 @@
 				(hide yes)
 			)
 		)
-		(property "MF" "Samtec"
-			(at 204.47 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "Connector Header Through Hole 3 position 0.079 (2.00mm)"
+		(property "MF" "JST"
 			(at 204.47 86.36 0)
 			(effects
 				(font
@@ -3630,7 +3440,7 @@
 				(hide yes)
 			)
 		)
-		(property "Package" "None"
+		(property "MP" "B3B-PH-K-S"
 			(at 204.47 86.36 0)
 			(effects
 				(font
@@ -3640,57 +3450,7 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "None"
-			(at 204.47 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=eda"
-			(at 204.47 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=snap"
-			(at 204.47 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MP" "MTMM-103-03-T-S-150"
-			(at 204.47 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Availability" "In Stock"
-			(at 204.47 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "SAMTEC"
+		(property "MANUFACTURER" "JST"
 			(at 204.47 86.36 0)
 			(effects
 				(font
@@ -4151,7 +3911,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MTMM-103-03-T-S-150"
+		(property "Value" "B3B-PH-K-S"
 			(at 210.82 101.5999 0)
 			(effects
 				(font
@@ -4170,7 +3930,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 204.47 100.33 0)
 			(effects
 				(font
@@ -4179,7 +3939,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "JST PH 3-pin 2.00 mm top-entry shrouded header, load-cell socket"
 			(at 204.47 100.33 0)
 			(effects
 				(font
@@ -4188,17 +3948,7 @@
 				(hide yes)
 			)
 		)
-		(property "MF" "Samtec"
-			(at 204.47 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "Connector Header Through Hole 3 position 0.079 (2.00mm)"
+		(property "MF" "JST"
 			(at 204.47 100.33 0)
 			(effects
 				(font
@@ -4208,7 +3958,7 @@
 				(hide yes)
 			)
 		)
-		(property "Package" "None"
+		(property "MP" "B3B-PH-K-S"
 			(at 204.47 100.33 0)
 			(effects
 				(font
@@ -4218,57 +3968,7 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "None"
-			(at 204.47 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=eda"
-			(at 204.47 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=snap"
-			(at 204.47 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MP" "MTMM-103-03-T-S-150"
-			(at 204.47 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Availability" "In Stock"
-			(at 204.47 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "SAMTEC"
+		(property "MANUFACTURER" "JST"
 			(at 204.47 100.33 0)
 			(effects
 				(font

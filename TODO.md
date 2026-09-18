@@ -1,7 +1,7 @@
 Scale Controller Rev-A — Project TODO
 
 A running checklist of tasks for hardware, firmware, and documentation.
-Updated 2026-09-15. See docs/status-2026-09-15.md for the current summary.
+Updated 2026-09-18. See docs/status-2026-09-17.md for the current summary.
 
 ⸻
 
@@ -32,7 +32,12 @@ Updated 2026-09-15. See docs/status-2026-09-15.md for the current summary.
 	•	[x] Silkscreen: load-cell sockets labelled with wire-colour legend
 	•	[x] DFM pass for PCBWay (2026-09-17): all vias 0.6/0.3 (0.15 ring), ESP32 module ground-grid pads 0.6, USB-C swapped to HRO TYPE-C-31-M-12 (SMD pins), CC1/CC2 5.1k pull-downs added, copper-to-edge rule 0.3
 	•	[ ] Order note for PCBWay: one 0.55/0.3 via (0.125 ring) at U4-VBUS; J1 footprint peg-to-shell-leg hole spacing 0.35 (manufacturer geometry)
-	•	[ ] Resolve 3 lib_symbol_mismatch warnings (ESP32-C3, LM1117, SS-52400) — sync symbols
+	•	[x] Resolved lib_symbol_mismatch warnings (2026-09-18): U2 LM1117, U3 ESP32-C3, J3/J5/J7/J8 MTMM-103-03 project libs rewritten from the
+		schematic copies (KiCad 9 format; MTMM pins now 1/2/3 to match the JST PH pads); SnapEDA "Description_1" junk fields dropped. Netlist unchanged.
+	•	[x] .kicad_dru: deleted the global annular_width ignore (2026-09-18) — U3 ground-grid pads are 0.6/0.3 since the DFM pass, DRC clean without it
+	•	[x] Board stackup → PCBWay 4-layer 1.6 mm: 7628 prepreg 0.19 ×2, core 1.03, 1 oz all layers (2026-09-18)
+	•	[x] J3/J5/J7/J8 Value/MF/MP → JST B3B-PH-K-S in schematic, project symbol lib and board footprints; stale SnapEDA fields dropped (2026-09-18).
+		Symbol is still named MTMM-103-03-T-S-150 in the project lib (lib_id unchanged on purpose)
 	•	[x] Route the PCB — all 141 connections routed 2026-09-14/15 (power, 3.3V, GND, analog, digital); 0 unrouted
 	•	[x] Run DRC — 0 errors, 0 unrouted; footprints refreshed from KiCad 9 libs. 4 warnings left: J1/U3 lib mismatch (intentional: bridged mask + solid zone connect) and 2 U3-outline-vs-edge silk notes
 	•	[x] Silkscreen: socket labels LC1-4 + wiring legend, button labels, J6/J9 pin names, LED names, board name/date (2026-09-17)

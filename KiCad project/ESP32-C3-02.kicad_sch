@@ -179,7 +179,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "ESP32-C3 Wi-Fi/BLE module, 4 MB flash, PCB antenna"
 				(at 0 0 0)
 				(effects
 					(font
@@ -189,16 +189,6 @@
 				)
 			)
 			(property "MF" "Espressif Systems"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "\n                        \n                            WiFi Modules (802.11) (Engineering Samples) SMD module, ESP32-C3, 4MB SPI flash, PCB antenna, -40 C +105 C\n                        \n"
 				(at 0 0 0)
 				(effects
 					(font
@@ -7336,16 +7326,6 @@
 			)
 		)
 		(property "MF" "Espressif Systems"
-			(at 215.9 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "\n                        \n                            WiFi Modules (802.11) (Engineering Samples) SMD module, ESP32-C3, 4MB SPI flash, PCB antenna, -40 C +105 C\n                        \n"
 			(at 215.9 44.45 0)
 			(effects
 				(font

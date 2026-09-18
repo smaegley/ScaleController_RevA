@@ -59,7 +59,7 @@
 			(layer "dielectric 1"
 				(type "prepreg")
 				(color "FR4 natural")
-				(thickness 0.1)
+				(thickness 0.19)
 				(material "FR4")
 				(epsilon_r 4.5)
 				(loss_tangent 0.02)
@@ -71,7 +71,7 @@
 			(layer "dielectric 2"
 				(type "core")
 				(color "FR4 natural")
-				(thickness 1.24)
+				(thickness 1.03)
 				(material "FR4")
 				(epsilon_r 4.5)
 				(loss_tangent 0.02)
@@ -83,7 +83,7 @@
 			(layer "dielectric 3"
 				(type "prepreg")
 				(color "FR4 natural")
-				(thickness 0.1)
+				(thickness 0.19)
 				(material "FR4")
 				(epsilon_r 4.5)
 				(loss_tangent 0.02)
@@ -6301,7 +6301,7 @@
 				)
 			)
 		)
-		(property "Value" "MTMM-103-03-T-S-150"
+		(property "Value" "B3B-PH-K-S"
 			(at 2 4 0)
 			(layer "F.Fab")
 			(uuid "b2195892-c1eb-4613-a426-211b20c17201")
@@ -6312,7 +6312,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -6324,7 +6324,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "JST PH 3-pin 2.00 mm top-entry shrouded header, load-cell socket"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -6336,7 +6336,7 @@
 				)
 			)
 		)
-		(property "MF" "Samtec"
+		(property "MF" "JST"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6349,72 +6349,7 @@
 				)
 			)
 		)
-		(property "Description_1" "Connector Header Through Hole 3 position 0.079 (2.00mm)"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "5cbd7894-d528-4242-9771-8802ed560f54")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Package" "None"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "d7eb5a27-c17b-443f-a861-f0b94f5a1379")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Price" "None"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "cb959c18-d719-4f7f-aae1-363dd8983cb1")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=eda"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "c2494f8b-fcd0-4a67-a85d-1e52bade54b3")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=snap"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "8b21eb0e-fe43-46a9-b17b-957d2909cd79")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MP" "MTMM-103-03-T-S-150"
+		(property "MP" "B3B-PH-K-S"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6427,20 +6362,7 @@
 				)
 			)
 		)
-		(property "Availability" "In Stock"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "9b0dfc84-4ad1-47a4-b3bc-f8bf8dad79ed")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MANUFACTURER" "SAMTEC"
+		(property "MANUFACTURER" "JST"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8822,7 +8744,7 @@
 				)
 			)
 		)
-		(property "Value" "MTMM-103-03-T-S-150"
+		(property "Value" "B3B-PH-K-S"
 			(at 2 4 0)
 			(layer "F.Fab")
 			(uuid "4c170918-4254-4d54-b856-61521d9da29f")
@@ -8833,7 +8755,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -8845,7 +8767,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "JST PH 3-pin 2.00 mm top-entry shrouded header, load-cell socket"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -8857,7 +8779,7 @@
 				)
 			)
 		)
-		(property "MF" "Samtec"
+		(property "MF" "JST"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8870,72 +8792,7 @@
 				)
 			)
 		)
-		(property "Description_1" "Connector Header Through Hole 3 position 0.079 (2.00mm)"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "0157173d-f61e-449a-8ef6-fa517792bd04")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Package" "None"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "57385db5-dba2-44f9-bb56-97c7d38a7834")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Price" "None"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "d24a9ef4-a96c-4d5d-b76b-d0ee3c5486bc")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=eda"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "f1dcd6b4-6720-436b-80ee-0d42a9869a20")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=snap"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "00d34f30-94ae-4d7c-b533-9385cf885d32")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MP" "MTMM-103-03-T-S-150"
+		(property "MP" "B3B-PH-K-S"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8948,20 +8805,7 @@
 				)
 			)
 		)
-		(property "Availability" "In Stock"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "b74f0502-fc4d-4779-8cce-07c92394b393")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MANUFACTURER" "SAMTEC"
+		(property "MANUFACTURER" "JST"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10305,7 +10149,7 @@
 				)
 			)
 		)
-		(property "Value" "MTMM-103-03-T-S-150"
+		(property "Value" "B3B-PH-K-S"
 			(at 2 4 0)
 			(layer "F.Fab")
 			(uuid "e252c2b7-2ca1-4a77-8b31-5d5e511e6b6f")
@@ -10316,7 +10160,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -10328,7 +10172,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "JST PH 3-pin 2.00 mm top-entry shrouded header, load-cell socket"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -10340,7 +10184,7 @@
 				)
 			)
 		)
-		(property "MF" "Samtec"
+		(property "MF" "JST"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10353,72 +10197,7 @@
 				)
 			)
 		)
-		(property "Description_1" "Connector Header Through Hole 3 position 0.079 (2.00mm)"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "c8c5a8f6-627b-4a36-a1c0-d74d49bec98d")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Package" "None"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "948549f6-9ea7-481c-a4b8-c0006ccd9fec")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Price" "None"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "f68028a0-139c-45a6-aa40-b626ad4efae9")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=eda"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "6f656f83-bfa8-4c09-8f02-8918399668a3")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=snap"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "340faeaf-fc71-4302-bc76-98323e1cbf22")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MP" "MTMM-103-03-T-S-150"
+		(property "MP" "B3B-PH-K-S"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10431,20 +10210,7 @@
 				)
 			)
 		)
-		(property "Availability" "In Stock"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "4bbc88cf-df9e-4d4a-a22a-774f7a721215")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MANUFACTURER" "SAMTEC"
+		(property "MANUFACTURER" "JST"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12335,7 +12101,7 @@
 				)
 			)
 		)
-		(property "Value" "MTMM-103-03-T-S-150"
+		(property "Value" "B3B-PH-K-S"
 			(at 2 4 0)
 			(layer "F.Fab")
 			(uuid "5899e9b5-c611-4adc-a96d-ab98a5238d1b")
@@ -12346,7 +12112,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -12358,7 +12124,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "JST PH 3-pin 2.00 mm top-entry shrouded header, load-cell socket"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -12370,7 +12136,7 @@
 				)
 			)
 		)
-		(property "MF" "Samtec"
+		(property "MF" "JST"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12383,72 +12149,7 @@
 				)
 			)
 		)
-		(property "Description_1" "Connector Header Through Hole 3 position 0.079 (2.00mm)"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "c51e7c2a-bcdf-4fe7-a8e6-4d4296786151")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Package" "None"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "5abb6991-3e96-41bb-92b2-7495792d60f5")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Price" "None"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "70a8ea55-2ffb-4e6f-b466-0fa8a3a4a947")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=eda"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "8d7c0d57-108e-47c0-95e8-a1db25470387")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/MTMM-103-03-T-S-150/Samtec/view-part/?ref=snap"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "3f5101fc-ca8c-4e6d-a393-5e0c2bd085b2")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MP" "MTMM-103-03-T-S-150"
+		(property "MP" "B3B-PH-K-S"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12461,20 +12162,7 @@
 				)
 			)
 		)
-		(property "Availability" "In Stock"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "07df62a2-36f6-4a60-8cf6-549353ecf9fd")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MANUFACTURER" "SAMTEC"
+		(property "MANUFACTURER" "JST"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
