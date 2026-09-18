@@ -246,7 +246,33 @@
 				)
 			)
 		)
-		(property "Description" "24-bit Analog-to-Digital Converter (ADC) for Weight Scales, SOIC-16 (SOP-16)"
+		(property "MF" "Avia Semiconductor"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "38a1f074-9219-4bff-860b-d591e3ef869c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MP" "HX711"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8c7999df-288b-45b9-992e-a2ba96e9b89e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "24-bit ADC for weight scales, SOIC-16 - Avia Semiconductor HX711, genuine or known-good source (noise-critical)"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -5124,7 +5150,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7nF"
+		(property "Value" "4.7nF C0G 50V"
 			(at 0 1.68 0)
 			(layer "F.Fab")
 			(uuid "e482f6af-03fd-40fc-aeb2-8c438d225292")
@@ -5147,7 +5173,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "4.7 nF C0G/NP0 50 V, 0805 - HX711 input filter, matched pair with C13; do not substitute Class 2 dielectric"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -9240,7 +9266,7 @@
 				)
 			)
 		)
-		(property "Value" "10u"
+		(property "Value" "10u X7R 10V"
 			(at 0 1.68 0)
 			(layer "F.Fab")
 			(uuid "a8d71f4a-7a74-410b-a58b-e3be1714fb9d")
@@ -9263,7 +9289,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "10 uF X7R or X5R, 10 V min, 0805 - HX711 AVDD/DVDD decoupling; no Y5V"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -15241,7 +15267,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7nF"
+		(property "Value" "4.7nF C0G 50V"
 			(at 0 1.68 180)
 			(layer "F.Fab")
 			(uuid "067cc815-89d9-4c36-8629-2c3e583f109b")
@@ -15264,7 +15290,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "4.7 nF C0G/NP0 50 V, 0805 - HX711 input filter, matched pair with C12; do not substitute Class 2 dielectric"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)

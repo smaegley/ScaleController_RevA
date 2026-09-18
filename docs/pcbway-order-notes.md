@@ -42,6 +42,7 @@ Fab package: `fabrication/RevA-2026-09-18/ScaleController_RevA-gerbers.zip`
   (`-pos-bottom.csv` lists only J9). Positions are in mm, KiCad absolute origin, Y axis up.
 - 50 top-side parts, all SMD except the 4 JST PH sockets (J3/J5/J7/J8) and J6, which are
   through-hole on the top side.
-- 13 of 27 BOM lines carry a manufacturer part number; the rest are generic 0805 R/C,
-  the 2.54 mm header/socket and the HX711 (any HX711 SOIC-16 is acceptable).
+- 14 of 27 BOM lines carry a manufacturer part number; the rest are generic 0805 R/C
+  and the 2.54 mm header/socket. **Do not substitute** C12/C13 (C0G) or C16 (X7R ≥10 V);
+  U6 must be a genuine or known-good Avia HX711 — dielectric and source are in the BOM Description.
 - U3 (ESP32-C3-WROOM-02-H4) is moisture-sensitive; standard MSL handling.

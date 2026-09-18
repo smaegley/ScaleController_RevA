@@ -2414,7 +2414,25 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "24-bit Analog-to-Digital Converter (ADC) for Weight Scales, SOIC-16 (SOP-16)"
+		(property "MF" "Avia Semiconductor"
+			(at 93.98 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MP" "HX711"
+			(at 93.98 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "24-bit ADC for weight scales, SOIC-16 - Avia Semiconductor HX711, genuine or known-good source (noise-critical)"
 			(at 90.17 78.74 0)
 			(effects
 				(font
@@ -2677,7 +2695,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7nF"
+		(property "Value" "4.7nF C0G 50V"
 			(at 48.006 102.616 90)
 			(effects
 				(font
@@ -2703,7 +2721,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "4.7 nF C0G/NP0 50 V, 0805 - HX711 input filter, matched pair with C12; do not substitute Class 2 dielectric"
 			(at 48.26 96.52 0)
 			(effects
 				(font
@@ -3190,7 +3208,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7nF"
+		(property "Value" "4.7nF C0G 50V"
 			(at 48.26 63.5 90)
 			(effects
 				(font
@@ -3216,7 +3234,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "4.7 nF C0G/NP0 50 V, 0805 - HX711 input filter, matched pair with C13; do not substitute Class 2 dielectric"
 			(at 48.26 68.58 0)
 			(effects
 				(font
@@ -3573,7 +3591,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10u"
+		(property "Value" "10u X7R 10V"
 			(at 120.65 48.2599 0)
 			(effects
 				(font
@@ -3600,7 +3618,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "10 uF X7R or X5R, 10 V min, 0805 - HX711 AVDD/DVDD decoupling; no Y5V"
 			(at 116.84 46.99 0)
 			(effects
 				(font
