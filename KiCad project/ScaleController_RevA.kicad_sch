@@ -2644,7 +2644,7 @@
 		)
 		(uuid "f028a766-0902-4025-81ca-987e4cc7327f")
 	)
-	(text_box "Only the USB 2.0 D+/D- pairs are used: the ESP32-C3's built-in\nUSB-Serial/JTAG (GPIO18/19) handles programming and logging.\nThe USB 3.x TX/RX pairs of the receptacle are not connected."
+	(text_box "USB 2.0 D+/D- only: the ESP32-C3's native\nUSB-Serial/JTAG (GPIO18/19) does programming\nand logging. USB 3.x pairs are unused."
 		(exclude_from_sim no)
 		(at 125.73 13.97 0)
 		(size 33.655 12.065)
@@ -2664,10 +2664,10 @@
 		)
 		(uuid "7ff9ea84-b5ed-4644-8d77-399674277d6a")
 	)
-	(text_box "Reset/boot circuit and USB per the ESP32-C3-WROOM-02 datasheet,\nsection 9 Peripheral Schematics. Strapping pins GPIO2/8/9 are\npulled up on the ESP32-C3-02 sheet."
+	(text_box "Reset/boot and USB per ESP32-C3-WROOM-02\ndatasheet sect. 9. Strapping pull-ups\n(GPIO2/8/9) are on the ESP32-C3-02 sheet."
 		(exclude_from_sim no)
 		(at 128.905 188.2775 0)
-		(size 43.815 7.3025)
+		(size 43.815 8.9)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
