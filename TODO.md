@@ -51,7 +51,8 @@ Updated 2026-09-18. See docs/status-2026-09-18.md for the current summary.
 	•	[x] BOM CSV exported (all fields + PCBWay-style); [ ] add LCSC/JLC numbers if assembling there
 	•	[x] Gerbers + drill (Protel ext., separate PTH/NPTH) + zip (2026-09-18)
 	•	[x] Pick-and-place CSVs, top + bottom (2026-09-18)
-	•	[ ] Upload to JLC/PCBWay for prototype quote
+	•	[ ] Upload to PCBWay for prototype quote — mark Q2, Q3, R33, R34 **DNP** on the assembly BOM (docs/schematic-review-2026-09-18.md F1)
+	•	[x] Netlist-level schematic review vs datasheets (2026-09-18) — docs/schematic-review-2026-09-18.md: 2 design errors in the programming path (F1 CP2102N QFN20 has no DTR; F2 GPIO8 floating), workarounds need no board change
 
 ⸻
 
@@ -66,6 +67,7 @@ Updated 2026-09-18. See docs/status-2026-09-18.md for the current summary.
 ⸻
 
 🧪 Bring-Up & Testing
+	•	[ ] Fit 10 kΩ across J6 pins 1–2 (GPIO8 pull-up) before first flash; flash with BOOT held (review F2/F1)
 	•	[ ] Power test (USB-C, check 3.3 V rail)
 	•	[ ] I²C scan → detect OLED at 0x3C
 	•	[ ] HX711 baseline counts stable (no load)
@@ -88,6 +90,6 @@ Updated 2026-09-18. See docs/status-2026-09-18.md for the current summary.
 
 🚀 Roadmap
 	•	[ ] Rev-A prototype bring-up → fix issues
-	•	[ ] Rev-B: add physical status LED (GPIO19) + any minor tweaks
+	•	[ ] Rev-B: native USB-Serial/JTAG on GPIO18/19 instead of CP2102N; pull-ups on GPIO2/GPIO8/GPIO9; 4.7k I2C pull-ups; status LED; optional 1k/10nF HX711 input filter (review F1–F6)
 	•	[ ] Prepare kit version: PCB + load cell mounts
 	•	[ ] Write blog/guide on building an ESPHome Scale with this PCB
