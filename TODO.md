@@ -8,10 +8,10 @@ Updated 2026-09-18. See docs/status-2026-09-18.md for the current summary.
 🖥️ KiCad / Hardware Design
 	•	[x] Add HX711 child sheet (HX711_LoadCell_Summing.kicad_sch)
 	•	[x] Wire 4× JST-PH-3 load cell connectors → HX711 (E+/E-, S± summing into INA±)
-	•	[x] Add JST-PH-4 OLED header (SDA=GPIO4, SCL=GPIO3)
+	•	[x] Add JST-PH-4 OLED header (SDA=GPIO4, SCL=GPIO3); 4.7k pull-ups R6/R7 on board (2026-09-18)
 	•	[x] BOOT (SW1) + EN (SW2) buttons — tare reuses BOOT (GPIO9), no dedicated button needed
 	•	[x] Run ERC — 0 errors (only benign lib-config warnings)
-	•	[x] Status LED — deferred to Rev-B; Rev-A shows status on OLED / Home Assistant
+	•	[x] Status LED — D5 green on GPIO7 (active-low), added 2026-09-18 with the USB rework
 	•	[x] Unified the three 3.3V power nets (2026-09-14). Root/C3/UI sheets use SparkFun-PowerSymbol:3.3V (net "3.3V"),
 		HX711 sheet uses power:+3.3V (net "+3.3V", 7 pins incl. U6 VSUP/AVDD/DVDD), OLED sheet uses power:+3V3 (J9 pin 1).
 		The three are separate nets — HX711 and OLED are unpowered. ERC is silent because power symbols self-drive.
@@ -51,7 +51,7 @@ Updated 2026-09-18. See docs/status-2026-09-18.md for the current summary.
 	•	[x] BOM CSV exported (all fields + PCBWay-style); [ ] add LCSC/JLC numbers if assembling there
 	•	[x] Gerbers + drill (Protel ext., separate PTH/NPTH) + zip (2026-09-18)
 	•	[x] Pick-and-place CSVs, top + bottom (2026-09-18)
-	•	[ ] Upload to PCBWay for prototype quote — mark Q2, Q3, R33, R34 **DNP** on the assembly BOM (docs/schematic-review-2026-09-18.md F1)
+	•	[ ] Upload to PCBWay for prototype quote
 	•	[x] Netlist-level schematic review vs datasheets (2026-09-18) — docs/schematic-review-2026-09-18.md: 2 design errors in the programming path (F1 CP2102N QFN20 has no DTR; F2 GPIO8 floating), workarounds need no board change
 
 ⸻
@@ -67,7 +67,6 @@ Updated 2026-09-18. See docs/status-2026-09-18.md for the current summary.
 ⸻
 
 🧪 Bring-Up & Testing
-	•	[ ] Fit 10 kΩ across J6 pins 1–2 (GPIO8 pull-up) before first flash; flash with BOOT held (review F2/F1)
 	•	[ ] Power test (USB-C, check 3.3 V rail)
 	•	[ ] I²C scan → detect OLED at 0x3C
 	•	[ ] HX711 baseline counts stable (no load)
@@ -90,6 +89,7 @@ Updated 2026-09-18. See docs/status-2026-09-18.md for the current summary.
 
 🚀 Roadmap
 	•	[ ] Rev-A prototype bring-up → fix issues
-	•	[ ] Rev-B: native USB-Serial/JTAG on GPIO18/19 instead of CP2102N; pull-ups on GPIO2/GPIO8/GPIO9; 4.7k I2C pull-ups; status LED; optional 1k/10nF HX711 input filter (review F1–F6)
+	•	[x] Review findings F1–F5 designed out in Rev-A (2026-09-18): native USB-Serial/JTAG replaces the CP2102N; 10k pull-ups on GPIO2/GPIO8/GPIO9; 4.7k I2C pull-ups; status LED D5 on GPIO7; J6 = 3.3V/GPIO10/U0TXD/U0RXD/GND
+	•	[ ] Rev-B: optional 1k/10nF HX711 input filter (review F6)
 	•	[ ] Prepare kit version: PCB + load cell mounts
 	•	[ ] Write blog/guide on building an ESPHome Scale with this PCB

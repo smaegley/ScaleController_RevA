@@ -15,7 +15,7 @@ Fab package: `fabrication/RevA-2026-09-18/ScaleController_RevA-gerbers.zip`
 | Surface finish | HASL lead-free or ENIG — choose at order time (ENIG recommended for the 0.5 mm QFN U4) |
 | Mask / silk | green / white, or any standard colour; silkscreen on both sides |
 | Min track / clearance | 0.20 mm track; net-class clearance 0.15 mm (Default), 3.3V/GND planes 0.2 mm |
-| Vias | 0.55/0.30, 0.60/0.30 mm (diameter/drill) |
+| Vias | 0.60/0.30 mm (diameter/drill) throughout |
 | PTH drills | 0.30, 0.60, 0.75, 1.00 mm |
 | NPTH drills | 0.65, 3.20 mm (M3 mounting holes) |
 | Copper to edge | 0.3 mm |
@@ -24,25 +24,24 @@ Fab package: `fabrication/RevA-2026-09-18/ScaleController_RevA-gerbers.zip`
 
 ## Notes to put in the "special requirements" box
 
-1. **One 0.55 mm via** (0.30 mm drill, 0.125 mm annular ring) at U4 pin 8 / VBUS.
-   All other vias are 0.60/0.30 mm. Please accept as designed.
+1. All vias are 0.60/0.30 mm (0.15 mm annular ring).
 2. **J1 (USB-C, HRO TYPE-C-31-M-12):** the spacing between the alignment-peg holes and the
    shell-leg holes is 0.35 mm. This is the connector manufacturer's footprint geometry;
    please do not flag or move these holes.
 3. **J9 is a bottom-side through-hole part** (4-pin 2.54 mm socket for the OLED module).
    If ordering SMT assembly only, leave J9 unpopulated — it will be hand-soldered.
-4. **Via-in-pad:** U4 pin 12 is tied to the exposed pad with a via in the pad. Standard
-   (non-filled) via is acceptable for this prototype.
-5. Silkscreen is intentionally drawn across the board edge at J1 and the U3 antenna
+4. Silkscreen is intentionally drawn across the board edge at J1 and the U3 antenna
    notch; clip at the outline as usual.
 
 ## Assembly (if quoting SMT)
 
 - Files: `ScaleController_RevA-BOM-PCBWay.csv` and `ScaleController_RevA-pos-top.csv`
   (`-pos-bottom.csv` lists only J9). Positions are in mm, KiCad absolute origin, Y axis up.
-- 50 top-side parts, all SMD except the 4 JST PH sockets (J3/J5/J7/J8) and J6, which are
-  through-hole on the top side.
-- 14 of 27 BOM lines carry a manufacturer part number; the rest are generic 0805 R/C
+- 43 top-side parts, all SMD except the 4 JST PH sockets (J3/J5/J7/J8) and J6, which are
+  through-hole on the top side. J9 (bottom) is the only bottom-side part.
+- 12 of 23 BOM lines carry a manufacturer part number; the rest are generic 0805 R/C
   and the 2.54 mm header/socket. **Do not substitute** C12/C13 (C0G) or C16 (X7R ≥10 V);
   U6 must be a genuine or known-good Avia HX711 — dielectric and source are in the BOM Description.
+- No USB-UART bridge on this revision: programming and logging use the ESP32-C3's native
+  USB-Serial/JTAG through J1.
 - U3 (ESP32-C3-WROOM-02-H4) is moisture-sensitive; standard MSL handling.
