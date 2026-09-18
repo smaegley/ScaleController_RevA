@@ -1579,7 +1579,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7u"
+		(property "Value" "10u"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -6159,7 +6159,7 @@
 				)
 			)
 		)
-		(property "Value" "1 µF"
+		(property "Value" "1u"
 			(at 0 1.68 0)
 			(layer "F.Fab")
 			(uuid "eeedcf81-509a-4c2e-9eea-75054e2f15bf")
@@ -6770,7 +6770,7 @@
 				)
 			)
 		)
-		(property "Value" "USB_C_Receptacle_USB2.0_16P"
+		(property "Value" "TYPE-C-31-M-12"
 			(at 0 5.1 0)
 			(layer "F.Fab")
 			(uuid "14306039-6a9a-40ce-b2c1-ecb2805e05d1")
@@ -6787,6 +6787,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ea77965e-f2a0-4752-bb31-bcf83bc01ed9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MF" "HRO"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eed6f08c-eda7-4aa9-a9f0-e56838216b8c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MP" "TYPE-C-31-M-12"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aac12cff-7eb4-4c17-9774-3e1f57e0b573")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9214,7 +9240,7 @@
 				)
 			)
 		)
-		(property "Value" "10 µF"
+		(property "Value" "10u"
 			(at 0 1.68 0)
 			(layer "F.Fab")
 			(uuid "a8d71f4a-7a74-410b-a58b-e3be1714fb9d")
@@ -9452,7 +9478,7 @@
 				)
 			)
 		)
-		(property "Value" "0.1 µF"
+		(property "Value" "0.1u"
 			(at 0 1.68 0)
 			(layer "F.Fab")
 			(uuid "0e1dcf46-f8ff-4665-a000-44b38b0f8b6f")
@@ -15794,7 +15820,7 @@
 				)
 			)
 		)
-		(property "Value" "0.1 µF"
+		(property "Value" "0.1u"
 			(at 0 1.68 180)
 			(layer "F.Fab")
 			(uuid "6b9c92de-aab8-4bf9-a64d-c2f8a15ff027")

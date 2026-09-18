@@ -1,7 +1,7 @@
 Scale Controller Rev-A — Project TODO
 
 A running checklist of tasks for hardware, firmware, and documentation.
-Updated 2026-09-18. See docs/status-2026-09-17.md for the current summary.
+Updated 2026-09-18. See docs/status-2026-09-18.md for the current summary.
 
 ⸻
 
@@ -31,7 +31,9 @@ Updated 2026-09-18. See docs/status-2026-09-17.md for the current summary.
 	•	[x] E+/E- naming tidied: E+ is the 3.3V-side excitation (NT2), E- the GND side (NT3)
 	•	[x] Silkscreen: load-cell sockets labelled with wire-colour legend
 	•	[x] DFM pass for PCBWay (2026-09-17): all vias 0.6/0.3 (0.15 ring), ESP32 module ground-grid pads 0.6, USB-C swapped to HRO TYPE-C-31-M-12 (SMD pins), CC1/CC2 5.1k pull-downs added, copper-to-edge rule 0.3
-	•	[ ] Order note for PCBWay: one 0.55/0.3 via (0.125 ring) at U4-VBUS; J1 footprint peg-to-shell-leg hole spacing 0.35 (manufacturer geometry)
+	•	[x] Order notes for PCBWay → docs/pcbway-order-notes.md (2026-09-18)
+	•	[x] min_copper_edge_clearance restored to 0.3 (GUI save had reverted the DFM edit to 0.2) (2026-09-18)
+	•	[x] BOM cleanup: C9 4.7u→10u (matches T491A 10 µF MPN), cap values normalised, J1 → HRO TYPE-C-31-M-12 (2026-09-18)
 	•	[x] Resolved lib_symbol_mismatch warnings (2026-09-18): U2 LM1117, U3 ESP32-C3, J3/J5/J7/J8 MTMM-103-03 project libs rewritten from the
 		schematic copies (KiCad 9 format; MTMM pins now 1/2/3 to match the JST PH pads); SnapEDA "Description_1" junk fields dropped. Netlist unchanged.
 	•	[x] .kicad_dru: deleted the global annular_width ignore (2026-09-18) — U3 ground-grid pads are 0.6/0.3 since the DFM pass, DRC clean without it
@@ -45,10 +47,10 @@ Updated 2026-09-18. See docs/status-2026-09-17.md for the current summary.
 ⸻
 
 🔌 Fabrication
-	•	[ ] Generate schematic PDF for review (kicad-cli sch export pdf)
-	•	[ ] Export BOM (CSV + LCSC/JLC part numbers)
-	•	[ ] Generate Gerbers + drill files
-	•	[ ] Create pick-and-place (position) files for assembly
+	•	[x] Schematic PDF — fabrication/RevA-2026-09-18/ (2026-09-18)
+	•	[x] BOM CSV exported (all fields + PCBWay-style); [ ] add LCSC/JLC numbers if assembling there
+	•	[x] Gerbers + drill (Protel ext., separate PTH/NPTH) + zip (2026-09-18)
+	•	[x] Pick-and-place CSVs, top + bottom (2026-09-18)
 	•	[ ] Upload to JLC/PCBWay for prototype quote
 
 ⸻

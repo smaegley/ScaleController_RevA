@@ -2317,7 +2317,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.1 µF"
+		(property "Value" "0.1u"
 			(at 104.14 49.5299 0)
 			(effects
 				(font
@@ -3055,7 +3055,7 @@
 				)
 			)
 		)
-		(property "Value" "0.1 µF"
+		(property "Value" "0.1u"
 			(at 67.31 99.568 90)
 			(effects
 				(font
@@ -3573,7 +3573,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10 µF"
+		(property "Value" "10u"
 			(at 120.65 48.2599 0)
 			(effects
 				(font
@@ -3642,7 +3642,7 @@
 				)
 			)
 		)
-		(property "Value" "1 µF"
+		(property "Value" "1u"
 			(at 69.85 57.15 90)
 			(effects
 				(font
