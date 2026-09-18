@@ -2646,8 +2646,8 @@
 	)
 	(text_box "USB 2.0 D+/D- only: the ESP32-C3's native\nUSB-Serial/JTAG (GPIO18/19) does programming\nand logging. USB 3.x pairs are unused."
 		(exclude_from_sim no)
-		(at 125.73 13.97 0)
-		(size 33.655 12.065)
+		(at 161.29 13.97 0)
+		(size 52 12.065)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -2667,7 +2667,7 @@
 	(text_box "Reset/boot and USB per ESP32-C3-WROOM-02\ndatasheet sect. 9. Strapping pull-ups\n(GPIO2/8/9) are on the ESP32-C3-02 sheet."
 		(exclude_from_sim no)
 		(at 128.905 188.2775 0)
-		(size 43.815 8.9)
+		(size 56 8.9)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
