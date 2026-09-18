@@ -1,17 +1,21 @@
 # ScaleController Rev-A — ESPHome configuration
 #
 # Target: ESP32-C3-WROOM-02-H4  (RISC-V, Wi-Fi + BLE)
-# Flashing: via the on-board CP2102N USB-UART bridge (USB-C connector).
+# Flashing: the ESP32-C3's native USB-Serial/JTAG on the USB-C connector
+#   (GPIO18/19). esptool / ESPHome reset the chip and enter download mode over
+#   USB automatically. If a board ever refuses, hold BOOT (SW1) while plugging in.
+#   Logs also come over this USB port (logger: hardware_uart below).
 #
-# Verified pin map (from the KiCad netlist, 2026-07-05):
+# Verified pin map (from the KiCad netlist, 2026-09-18):
 #   HX711 DOUT  -> GPIO6
 #   HX711 PD_SCK-> GPIO5
-#   I2C  SDA    -> GPIO4
-#   I2C  SCL    -> GPIO3
-#   Tare button -> GPIO9    (reuses the on-board BOOT button SW1; active-low)
-#
-# Note: a physical status LED is deferred to Rev-B. In Rev-A, status is shown
-# on the OLED and in Home Assistant. GPIO18/GPIO19 remain free on header J6.
+#   I2C  SDA    -> GPIO4    (4.7k pull-up on board, R6)
+#   I2C  SCL    -> GPIO3    (4.7k pull-up on board, R7)
+#   Tare button -> GPIO9    (reuses the on-board BOOT button SW1; active-low; 10k pull-up R5)
+#   Status LED  -> GPIO7    (D5 green, anode to 3.3V via R14 330R: drive LOW to light)
+#   USB D-/D+   -> GPIO18/GPIO19 (native USB, do not use as GPIO)
+#   Header J6   -> 3.3V, GPIO10, U0TXD (GPIO21), U0RXD (GPIO20), GND
+#   Strapping pull-ups on board: GPIO2 (R4), GPIO8 (R3), GPIO9 (R5)
 #
 # Copy secrets.yaml.example to secrets.yaml and fill in your values before building.
 
@@ -35,6 +39,7 @@ esp32:
     type: esp-idf
 
 logger:
+  hardware_uart: USB_SERIAL_JTAG   # native USB CDC; UART0 (J6) stays free for a debug probe
 
 api:
   encryption:
@@ -124,7 +129,12 @@ script:
     then:
       - lambda: 'id(tare_offset) = id(hx711_raw).state;'
 
-# Status LED is deferred to Rev-B — tare feedback is shown on the OLED below.
+# ---- Status LED: D5 (green) on GPIO7, active-low ----
+# ESPHome blinks it while Wi-Fi/API are down and turns it off when everything is up.
+status_led:
+  pin:
+    number: GPIO7
+    inverted: true
 
 # ---- OLED display (SSD1306 128x64 @ 0x3C) ----
 font:
