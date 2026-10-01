@@ -31,8 +31,12 @@ Holds one 3-wire half-bridge load cell. Four per scale.
   50 kg half-bridge cell. Ø78 mm; bottom 12 mm + three Ø8 guide posts on a 56 mm circle; top 10 mm, floats
   on the cell button with a 4.75 mm gap to the bottom, retained by screw + washer on each post
   (Ø10 post holes, Ø14 counterbore, 1.5 mm lift). Lead channel 5 × 1.5 mm from the cell pocket to the rim.
-- `LoadCell_Puck_modC.step` — cable-end and overload-stop mod (agreed 2026-10-01): Puck_Bottom_modC,
-  Clamp_Bar, unchanged Puck_Top and cell. Reference for the Fusion rework.
+- `LoadCell_Puck_ModC_Steve.step` — **the design of record**: mod C modelled parametrically in Fusion
+  (2026-10-01). Matches the reference below to < 0.1 mm in sections through every feature;
+  splice pocket starts at 19.5 mm out.
+- `LoadCell_Puck_modC.step` — script-built reference for mod C (Puck_Bottom_modC, Clamp_Bar,
+  unchanged Puck_Top and cell), used to check the Fusion model.
+- `Fusion_ModC_Checklist.md` — step-by-step Fusion checklist for mod C.
 - `LoadCell_Puck_modC_cutters.step` — the four cut bodies alone (pocket, groove, recess, insert
   holes), same coordinates, for overlaying on Puck_Bottom in Fusion.
 - `scripts/puck_cable_mod.py` — regenerates both modC files from `LoadCell_Puck.step`
@@ -52,7 +56,7 @@ Distances "out" are from the puck centre along the lead channel; depths are belo
 | Clamp recess | 20 wide × 2.6 deep, 32 mm out → rim |
 | Clamp inserts | M2 × 6 × Ø3.5 heat-set, hole Ø3.2 × 7, ±6 mm at 35 mm out |
 | Clamp bar | recess minus `clr`, 2.6 thick, Ø2.4 holes, two 1.0 mm ridges (0.6 mm squeeze on a 4.2 mm cable); M2 × 6 SHCS, optional Ø4.4 × 1 counterbore |
-| Stop pads | six, r 31–37, 20° wide, at ±35°/±90°/±140° from the cable line, height `puck_gap - stop_gap` |
+| Stop pads | six, r 31–37, 20° wide, every 60° starting 30° off the cable line (circular pattern), height `puck_gap - stop_gap` |
 
 - **Walls under the `wall` (2.5 mm) rule, accepted:** insert hole to rim 1.9 mm, to groove 2.1 mm,
   to the splice-pocket corner 1.6 mm. Print with ≥4 perimeters, set inserts slowly; check the rim

@@ -4,10 +4,13 @@ pad_h,mm,puck_gap - stop_gap,4.25,stop pad height above the bottom face,false
 pad_r_in,mm,31 mm,31.00,stop pad inner radius,false
 pad_r_out,mm,37 mm,37.00,stop pad outer radius,false
 pad_span,deg,20 deg,20.00,angular width of each stop pad,false
-pad_a1,deg,35 deg,35.00,pad centre angle from cable line (mirrored),false
-pad_a2,deg,90 deg,90.00,pad centre angle from cable line (mirrored),false
-pad_a3,deg,140 deg,140.00,pad centre angle from cable line (mirrored),false
-splice_start,mm,19.5 mm,19.50,splice pocket start - distance out from puck centre,false
+pad_count,,6,6,number of stop pads (circular pattern),false
+pad_a1,deg,30 deg,30.00,first pad centre angle from the cable line,false
+pad_pitch,deg,360 deg / pad_count,60.00,angle between pads,false
+wire_ch_start,mm,17.25 mm,17.25,lead channel start = cell pocket edge (sketch is constrained to the pocket edge; this value only feeds splice_start),false
+wire_ch_end,mm,puck_d / 2 + 2 mm,41.00,lead channel end - past the rim,false
+slack_len,mm,2.5 mm,2.50,loose cell-lead zone between the cell pocket and the splice pocket,false
+splice_start,mm,wire_ch_start + slack_len,19.75,splice pocket start - distance out from puck centre,false
 splice_end,mm,32 mm,32.00,splice pocket end - distance out from puck centre,false
 splice_w,mm,10 mm,10.00,splice pocket width,false
 splice_depth,mm,4.6 mm,4.60,splice pocket depth below bottom face,false

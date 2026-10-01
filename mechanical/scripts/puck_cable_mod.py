@@ -25,7 +25,7 @@ P=dict(
   # bar: fills recess flush with face, 2 transverse ridges
   # overload stop: fixed pads on the bottom face, top lands on them after stop_gap of travel
   top_under=7.35, stop_gap=0.5, pad_r0=31.0, pad_r1=37.0, pad_half_deg=10.0,
-  pad_deg=(0,55,125,180,230,310),   # atan2(z,x); cable is at 90, posts at 30/150/270
+  pad_deg=(0,60,120,180,240,300),   # atan2(z,x): 6 at 60 deg, first 30 deg off the cable (cable 90, posts 30/150/270)
   bar_clear=0.25,          # = Fusion clr
   bar_hole=2.4, ridge_h=1.0, ridge_w=1.0, ridge_z=(33.5,36.6), ridge_len=7.0,
 )
