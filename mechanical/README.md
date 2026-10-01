@@ -42,7 +42,11 @@ Holds one 3-wire half-bridge load cell. Four per scale.
 - `scripts/puck_cable_mod.py` — regenerates both modC files from `LoadCell_Puck.step`
   (`pip install cadquery-ocp numpy`).
 - `ExportedParameters.csv` — Fusion user parameters of the original puck (exported from Fusion).
-- `CableMod_Parameters.csv` — new parameters for the cable/stop mod, same format, for import.
+- `CableMod_Parameters.csv` — new parameters for the cable/stop mod, in Fusion's built-in export format
+  (built-in import only *adds* — existing names come back as `name_1` duplicates).
+- `ParamUpdate_*_ParameterIO.csv` — parameter **updates**, in the Parameter I/O add-in format
+  (`name,unit,expression,comment`, no header row). The add-in updates existing parameters by name
+  (expression + comment; not the unit). Use this format for every future change.
 
 ## Mod C — design notes
 
@@ -66,3 +70,16 @@ Distances "out" are from the puck centre along the lead channel; depths are belo
   1.3 × the deflection at 50 kg. Sand pads to open the gap, shim with tape to close it.
 - **Clamp squeeze** depends on the real cable diameter: pull-test one bar on scrap cable (2–3 kg)
   before printing four; adjust `ridge_h`.
+
+## Changes after test print 1
+
+- **Cell dome measured at 7.56 mm** (frame underside to dome tip) vs 7.85 in the vendor model, so the
+  0.5 mm stop gap was really ~0.2 mm and the halves touched. Fix: `lc_top_h` = 7.56 (measured), which
+  carries through `top_under_y` 7.06 → `puck_gap` 4.46 → `pad_h` 3.96, `post_top_y` 13.06, `cb_floor_y` 11.56.
+- **Post inserts bulged the Ø8 posts** (M3, hole 4.5, 1.75 mm wall). Changed to the clamp's
+  M2 × 6 × Ø3.5 inserts: `insert_d` 3.2, `insert_depth` 7, `head_h` 2.0 (M2 SHCS) → 2.4 mm wall.
+  Retention: M2 × 6 SHCS + the existing 12 mm washer. Larger posts were rejected because the top's post
+  hole would grow to 12 mm and need ~16 mm washers.
+- `ExportedParameters.csv` is the pre-change export; `LoadCell_Puck_modC.step` predates these changes
+  (cell, top and posts at the old values) — check the next Fusion export against the numbers above.
+- Applied in Fusion via `ParamUpdate_TestPrint1_ParameterIO.csv`; derived values confirmed by Steve.

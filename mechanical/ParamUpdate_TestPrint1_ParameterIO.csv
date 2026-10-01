@@ -1,0 +1,4 @@
+lc_top_h,mm,7.56 mm,cell frame underside to dome tip - measured with calipers after test print 1
+insert_d,mm,3.2 mm,post insert hole for M2 x 6 x 3.5 heat-set insert (was M3 4.5 - bulged the posts)
+insert_depth,mm,7 mm,post insert hole depth for the 6 mm M2 insert
+head_h,mm,2 mm,M2 socket head cap screw head height
