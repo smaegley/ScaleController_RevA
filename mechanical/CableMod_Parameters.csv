@@ -1,0 +1,30 @@
+Name,Unit,Expression,Value,Comments,Favorite
+stop_gap,mm,0.5 mm,0.50,top travel before it lands on the stop pads - tune after measuring cell deflection,true
+pad_h,mm,puck_gap - stop_gap,4.25,stop pad height above the bottom face,false
+pad_r_in,mm,31 mm,31.00,stop pad inner radius,false
+pad_r_out,mm,37 mm,37.00,stop pad outer radius,false
+pad_span,deg,20 deg,20.00,angular width of each stop pad,false
+pad_a1,deg,35 deg,35.00,pad centre angle from cable line (mirrored),false
+pad_a2,deg,90 deg,90.00,pad centre angle from cable line (mirrored),false
+pad_a3,deg,140 deg,140.00,pad centre angle from cable line (mirrored),false
+splice_start,mm,19.5 mm,19.50,splice pocket start - distance out from puck centre,false
+splice_end,mm,32 mm,32.00,splice pocket end - distance out from puck centre,false
+splice_w,mm,10 mm,10.00,splice pocket width,false
+splice_depth,mm,4.6 mm,4.60,splice pocket depth below bottom face,false
+cable_d,mm,4.6 mm,4.60,cable groove diameter (cable 4.2 nominal),true
+cable_depth,mm,4.9 mm,4.90,groove centre below bottom face,false
+groove_start,mm,29 mm,29.00,groove start - distance out from puck centre,false
+clamp_start,mm,splice_end,32.00,clamp recess start - distance out from puck centre,false
+clamp_w,mm,20 mm,20.00,clamp recess width,false
+clamp_depth,mm,lc_frame_t,2.60,clamp recess depth below bottom face (floor at Y 0),false
+clamp_ins_d,mm,3.2 mm,3.20,hole for M2 x 6 x 3.5 heat-set insert,false
+clamp_ins_depth,mm,7 mm,7.00,insert hole depth below recess floor,false
+clamp_ins_x,mm,6 mm,6.00,insert offset each side of cable centreline,false
+clamp_ins_r,mm,35 mm,35.00,insert distance out from puck centre,false
+bar_t,mm,clamp_depth,2.60,clamp bar thickness (top flush with bottom face),false
+bar_hole_d,mm,2.4 mm,2.40,M2 clearance hole in clamp bar,false
+ridge_h,mm,1 mm,1.00,clamp bar ridge height - sets cable squeeze (0.6 mm at 1.0),true
+ridge_w,mm,1 mm,1.00,ridge width along the cable,false
+ridge_len,mm,7 mm,7.00,ridge length across the cable,false
+ridge_r1,mm,33.5 mm,33.50,first ridge distance out from puck centre,false
+ridge_r2,mm,36.6 mm,36.60,second ridge distance out from puck centre,false

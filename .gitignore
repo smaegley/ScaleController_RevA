@@ -59,3 +59,6 @@ ScaleController_RevA_schematic.pdf
 # ESPHome secrets (never commit real credentials)
 firmware/secrets.yaml
 .esphome/
+
+# Python
+__pycache__/
