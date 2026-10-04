@@ -83,3 +83,11 @@ Distances "out" are from the puck centre along the lead channel; depths are belo
 - `ExportedParameters.csv` is the pre-change export; `LoadCell_Puck_modC.step` predates these changes
   (cell, top and posts at the old values) — check the next Fusion export against the numbers above.
 - Applied in Fusion via `ParamUpdate_TestPrint1_ParameterIO.csv`; derived values confirmed by Steve.
+
+## Change after the cable arrived (Ø4.2 measured)
+
+- **Clamp ridges were 7 mm long across a 4.6 mm groove**, so their ends sat on the recess floor and held the
+  bar ~1 mm high — no squeeze. `ridge_len` → 4.2 mm (fits the groove with 0.2 mm each side). Groove stays
+  Ø4.6. With the bar seated the squeeze is 0.6 mm on the 4.2 mm cable. Applied via
+  `ParamUpdate_ClampRidge_ParameterIO.csv`. Missed earlier because no interference check was run between
+  Clamp_Bar and Puck_Bottom — run Inspect → Interference before every print.

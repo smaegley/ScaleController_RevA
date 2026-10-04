@@ -27,7 +27,7 @@ P=dict(
   top_under=7.35, stop_gap=0.5, pad_r0=31.0, pad_r1=37.0, pad_half_deg=10.0,
   pad_deg=(0,60,120,180,240,300),   # atan2(z,x): 6 at 60 deg, first 30 deg off the cable (cable 90, posts 30/150/270)
   bar_clear=0.25,          # = Fusion clr
-  bar_hole=2.4, ridge_h=1.0, ridge_w=1.0, ridge_z=(33.5,36.6), ridge_len=7.0,
+  bar_hole=2.4, ridge_h=1.0, ridge_w=1.0, ridge_z=(33.5,36.6), ridge_len=4.2,
 )
 def box(x0,y0,z0,x1,y1,z1): return BRepPrimAPI_MakeBox(gp_Pnt(x0,y0,z0),gp_Pnt(x1,y1,z1)).Shape()
 def cylZ(x,y,z0,r,l): return BRepPrimAPI_MakeCylinder(gp_Ax2(gp_Pnt(x,y,z0),gp_Dir(0,0,1)),r,l).Shape()
