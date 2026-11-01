@@ -104,7 +104,9 @@ enabled with Simplicity Studio's Xpress Configurator over USB. Not a fault.
 - **Load-cell wiring**: J3/J7 feed S+, J5/J8 feed S−, and the S− pair has E+/E− swapped on
   the board, so all four half-bridge cells plug in identically (white/red/black) and every
   corner produces a same-sign output. This is the standard 4-cell parallel Wheatstone.
-  For the most even corner response, mount the S+ pair (LC1/LC3 = J3/J7) diagonally.
+  For the most even corner response, mount the S+ pair (LC3/LC4 = J3/J7) diagonally.
+  *(Corrected 2026-11-01: this line originally said LC1/LC3. From the board, LC1/LC2 = J5/J8
+  = S−, LC3/LC4 = J3/J7 = S+.)*
 - **Firmware pins** (`firmware/scale-controller.yaml`) match the netlist: DOUT GPIO6,
   PD_SCK GPIO5, SDA GPIO4, SCL GPIO3, tare on GPIO9.
 - **OLED J9**: GND, 3V3, SCL, SDA — matches the module's pin order.

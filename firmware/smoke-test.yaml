@@ -1,0 +1,92 @@
+# ScaleController Rev-A — bring-up smoke test
+#
+# Minimal firmware for a first power-on: no Wi-Fi, no secrets, no display.
+# Everything is reported on the USB log (native USB-Serial/JTAG on the USB-C port).
+#
+#   - "boot ok" at start-up, chip temperature every 10 s
+#   - status LED D5 (GPIO7) blinks at 1 Hz       -> firmware is running
+#   - I2C scan on GPIO4/GPIO3 at boot             -> OLED at 0x3C if J9 is fitted
+#   - HX711 raw counts and delta every 0.5 s      -> load-cell path
+#   - BOOT button (SW1, GPIO9) zeroes the delta   -> button + tare path
+#
+# The four sockets are two half-bridge pairs: LC1/LC2 (J5/J8) feed S-, LC3/LC4 (J3/J7)
+# feed S+. A single cell leaves the other input floating, so plug one cell into LC1 or
+# LC2 and one into LC3 or LC4 and press on either.
+#
+# Build and flash:  esphome run firmware/smoke-test.yaml
+# Then switch to scale-controller.yaml for the real firmware.
+
+esphome:
+  name: scale-smoke
+  on_boot:
+    then:
+      - logger.log: "boot ok"
+
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: esp-idf
+
+logger:
+  hardware_uart: USB_SERIAL_JTAG
+  level: DEBUG
+
+i2c:
+  sda: GPIO4
+  scl: GPIO3
+  scan: true
+
+globals:
+  - id: zero_offset
+    type: float
+    initial_value: "0"
+  - id: led_state
+    type: bool
+    initial_value: "false"
+
+output:
+  - platform: gpio
+    id: status_led_out
+    pin:
+      number: GPIO7
+      inverted: true          # D5 anode to 3.3V via R14: LOW lights it
+
+interval:
+  - interval: 500ms
+    then:
+      - lambda: |-
+          id(led_state) = !id(led_state);
+          if (id(led_state)) id(status_led_out).turn_on(); else id(status_led_out).turn_off();
+
+sensor:
+  - platform: hx711
+    id: hx711_raw
+    name: "HX711 Raw"
+    dout_pin: GPIO6
+    clk_pin: GPIO5
+    gain: 128
+    update_interval: 500ms
+
+  - platform: template
+    name: "HX711 Delta"
+    update_interval: 500ms
+    lambda: |-
+      return id(hx711_raw).state - id(zero_offset);
+
+  - platform: internal_temperature
+    name: "Chip Temperature"
+    update_interval: 10s
+
+binary_sensor:
+  - platform: gpio
+    name: "BOOT Button"
+    pin:
+      number: GPIO9
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    on_press:
+      then:
+        - lambda: 'id(zero_offset) = id(hx711_raw).state;'
+        - logger.log: "zeroed"

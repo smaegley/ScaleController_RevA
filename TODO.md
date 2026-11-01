@@ -1,7 +1,7 @@
 Scale Controller Rev-A — Project TODO
 
 A running checklist of tasks for hardware, firmware, and documentation.
-Updated 2026-09-18. See docs/status-2026-09-18.md for the current summary.
+Updated 2026-11-01. See docs/status-2026-09-18.md (design) and docs/bringup-2026-11-01.md (first bring-up).
 
 ⸻
 
@@ -58,19 +58,23 @@ Updated 2026-09-18. See docs/status-2026-09-18.md for the current summary.
 
 ⚙️ Firmware (ESPHome)
 	•	[x] Create ESPHome YAML with verified pins — firmware/scale-controller.yaml (validated)
-	•	[x] Tare action (physical BOOT button + Home Assistant button, persistent offset)
+	•	[x] Tare action (physical BOOT button + Home Assistant button, persistent offset) — BOOT button unusable on Rev-A, see B1
 	•	[x] OLED UI (weight readout)
-	•	[ ] Flash to a real prototype and confirm boot + Wi-Fi
+	•	[x] Bring-up smoke test firmware/smoke-test.yaml flashed and running on board #1 (2026-11-01)
+	•	[ ] Flash scale-controller.yaml and confirm Wi-Fi + Home Assistant
 	•	[ ] Calibrate with known weights; set calibration_factor
 	•	[ ] Optional: auto-dim OLED, Wi-Fi status indicator, units toggle (g/oz)
 
 ⸻
 
 🧪 Bring-Up & Testing
-	•	[ ] Power test (USB-C, check 3.3 V rail)
+	•	[x] Power test (USB-C, 3.3 V rail, power LED) — board #1, 2026-11-01
+	•	[x] USB enumeration + flashing over native USB — needs SW1/SW2 removed (finding B1)
 	•	[ ] I²C scan → detect OLED at 0x3C
-	•	[ ] HX711 baseline counts stable (no load)
-	•	[ ] Add load cells one by one → confirm diagonal behavior
+	•	[x] HX711 baseline counts stable (no load): ±50 counts
+	•	[x] LC1 + LC4: presses move the reading the same direction (inversion OK)
+	•	[ ] Check sockets LC2 and LC3; repair the socket damaged on board #1
+	•	[ ] Build 4 pucks + test rig
 	•	[ ] Calibrate with 1000 g mass
 	•	[ ] Corner test: ±200 g per corner, <1% error
 	•	[ ] Wi-Fi test → confirm stable readings under RF load
@@ -90,6 +94,7 @@ Updated 2026-09-18. See docs/status-2026-09-18.md for the current summary.
 🚀 Roadmap
 	•	[ ] Rev-A prototype bring-up → fix issues
 	•	[x] Review findings F1–F5 designed out in Rev-A (2026-09-18): native USB-Serial/JTAG replaces the CP2102N; 10k pull-ups on GPIO2/GPIO8/GPIO9; 4.7k I2C pull-ups; status LED D5 on GPIO7; J6 = 3.3V/GPIO10/U0TXD/U0RXD/GND
+	•	[ ] Rev-B: fix SW1/SW2 wiring — TL3305 pins 1-2 and 3-4 are joined inside; GND on 1+2, EN/BOOT on 3+4 (bring-up B1)
 	•	[ ] Rev-B: optional 1k/10nF HX711 input filter (review F6)
 	•	[ ] Prepare kit version: PCB + load cell mounts
 	•	[ ] Write blog/guide on building an ESPHome Scale with this PCB

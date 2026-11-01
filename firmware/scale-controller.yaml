@@ -81,7 +81,7 @@ sensor:
     clk_pin: GPIO5
     gain: 128
     update_interval: 250ms
-    internal: true          # raw counts; used for calibration/tare, hidden from HA
+    # raw counts: shown in HA for calibration (step 2 above)
     filters:
       - median:
           window_size: 7
@@ -101,6 +101,8 @@ sensor:
           send_every: 1
 
 # ---- Tare: on-board BOOT button (SW1, GPIO9) + a button entity in Home Assistant ----
+# Rev-A: SW1 has to be removed (it shorts GPIO9 to GND, docs/bringup-2026-11-01.md), so only
+# the Home Assistant button works; the GPIO9 input then just idles high on R5.
 # GPIO9 is the BOOT strapping pin. It is only special during power-on/reset;
 # at runtime it is a normal input, so SW1 doubles as the tare button.
 binary_sensor:
