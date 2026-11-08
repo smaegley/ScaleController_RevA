@@ -1,45 +1,32 @@
-# ScaleController Rev-A — ESPHome configuration
+# Scale Controller — ESPHome configuration
 #
-# Target: ESP32-C3-WROOM-02-H4  (RISC-V, Wi-Fi + BLE)
-# Flashing: the ESP32-C3's native USB-Serial/JTAG on the USB-C connector
-#   (GPIO18/19). esptool / ESPHome reset the chip and enter download mode over
-#   USB automatically. If a board ever refuses, hold BOOT (SW1) while plugging in.
-#   Logs also come over this USB port (logger: hardware_uart below).
+# Board: Scale Controller Rev-A (ESP32-C3 + HX711, four half-bridge load cells).
+# Behaviour and Home Assistant entities: docs/firmware-spec.md.
 #
-# Verified pin map (from the KiCad netlist, 2026-09-18):
-#   HX711 DOUT  -> GPIO6
-#   HX711 PD_SCK-> GPIO5
-#   I2C  SDA    -> GPIO4    (4.7k pull-up on board, R6)
-#   I2C  SCL    -> GPIO3    (4.7k pull-up on board, R7)
-#   Tare button -> GPIO9    (reuses the on-board BOOT button SW1; active-low; 10k pull-up R5)
-#   Status LED  -> GPIO7    (D5 green, anode to 3.3V via R14 330R: drive LOW to light)
-#   USB D-/D+   -> GPIO18/GPIO19 (native USB, do not use as GPIO)
-#   Header J6   -> 3.3V, GPIO10, U0TXD (GPIO21), U0RXD (GPIO20), GND
-#   Strapping pull-ups on board: GPIO2 (R4), GPIO8 (R3), GPIO9 (R5)
-#
+# First flash over USB (native USB-Serial/JTAG on the USB-C port), then over Wi-Fi.
 # Copy secrets.yaml.example to secrets.yaml and fill in your values before building.
+#
+# Calibrate from Home Assistant (no recompile):
+#   1. Empty scale -> press "Zero".
+#   2. Put a known mass on it, enter it in "Calibration weight", press "Calibrate".
+#   "Status" shows progress; the result is saved on the device.
 
 substitutions:
   name: scale-controller
   friendly_name: "Scale Controller"
-  # ---- Calibration ----
-  # 1. Power on with an empty platform and press Tare (or the HA "Tare" button).
-  # 2. Place a known mass (e.g. 1000 g) and read "Scale Raw Counts".
-  # 3. calibration_factor = known_mass_g / (raw_counts_with_mass - raw_counts_tared)
-  # 4. Put that number below and re-flash.
-  calibration_factor: "1.0"
 
 esphome:
   name: ${name}
   friendly_name: ${friendly_name}
 
-esp32:
-  board: esp32-c3-devkitm-1
-  framework:
-    type: esp-idf
+external_components:
+  - source:
+      type: local
+      path: components
 
-logger:
-  hardware_uart: USB_SERIAL_JTAG   # native USB CDC; UART0 (J6) stays free for a debug probe
+packages:
+  board: !include packages/board-rev-a.yaml
+  scale: !include packages/scale-core.yaml
 
 api:
   encryption:
@@ -57,101 +44,3 @@ wifi:
     password: !secret ap_password
 
 captive_portal:
-
-# ---- I2C bus (OLED) ----
-i2c:
-  id: bus_a
-  sda: GPIO4
-  scl: GPIO3
-  scan: true
-
-# ---- Persistent tare offset ----
-globals:
-  - id: tare_offset
-    type: float
-    restore_value: yes
-    initial_value: "0"
-
-# ---- Sensors ----
-sensor:
-  - platform: hx711
-    id: hx711_raw
-    name: "Scale Raw Counts"
-    dout_pin: GPIO6
-    clk_pin: GPIO5
-    gain: 128
-    update_interval: 250ms
-    # raw counts: shown in HA for calibration (step 2 above)
-    filters:
-      - median:
-          window_size: 7
-          send_every: 4
-
-  - platform: template
-    id: weight_g
-    name: "Weight"
-    unit_of_measurement: "g"
-    accuracy_decimals: 1
-    update_interval: 250ms
-    lambda: |-
-      return (id(hx711_raw).state - id(tare_offset)) * ${calibration_factor};
-    filters:
-      - exponential_moving_average:
-          alpha: 0.2
-          send_every: 1
-
-# ---- Tare: on-board BOOT button (SW1, GPIO9) + a button entity in Home Assistant ----
-# Rev-A: SW1 has to be removed (it shorts GPIO9 to GND, docs/bringup-2026-11-01.md), so only
-# the Home Assistant button works; the GPIO9 input then just idles high on R5.
-# GPIO9 is the BOOT strapping pin. It is only special during power-on/reset;
-# at runtime it is a normal input, so SW1 doubles as the tare button.
-binary_sensor:
-  - platform: gpio
-    id: tare_button
-    name: "Tare Button"
-    pin:
-      number: GPIO9
-      mode:
-        input: true
-        pullup: true
-      inverted: true         # active-low: SW1 pulls the pin to GND when pressed
-    on_press:
-      then:
-        - script.execute: do_tare
-
-button:
-  - platform: template
-    name: "Tare"
-    on_press:
-      then:
-        - script.execute: do_tare
-
-script:
-  - id: do_tare
-    then:
-      - lambda: 'id(tare_offset) = id(hx711_raw).state;'
-
-# ---- Status LED: D5 (green) on GPIO7, active-low ----
-# ESPHome blinks it while Wi-Fi/API are down and turns it off when everything is up.
-status_led:
-  pin:
-    number: GPIO7
-    inverted: true
-
-# ---- OLED display (SSD1306 128x64 @ 0x3C) ----
-font:
-  - file: "gfonts://Roboto"
-    id: font_large
-    size: 24
-  - file: "gfonts://Roboto"
-    id: font_small
-    size: 12
-
-display:
-  - platform: ssd1306_i2c
-    model: "SSD1306 128x64"
-    address: 0x3C
-    i2c_id: bus_a
-    lambda: |-
-      it.printf(0, 0, id(font_small), "Weight");
-      it.printf(127, 22, id(font_large), TextAlign::TOP_RIGHT, "%.1f g", id(weight_g).state);

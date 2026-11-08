@@ -1,0 +1,273 @@
+# Scale Controller core: weighing logic, Home Assistant entities, settings and diagnostics.
+# Behaviour is specified in docs/firmware-spec.md. Needs a board package (pins, LED output)
+# and the `scale` external component (firmware/components/scale).
+#
+# Everything is reported to Home Assistant in kg; set an entity's unit to lb in HA if you
+# prefer (spec section 5). "Display unit" only affects the device's own display and web page.
+
+esphome:
+  project:
+    name: smaegley.scale-controller
+    version: "0.1.0"
+
+logger:
+  logs:
+    hx711: INFO               # one reading every 125 ms would flood the log
+    sensor: INFO
+
+web_server:
+  port: 80
+  version: 3
+
+scale:
+  id: scale_core
+  weight: weight
+  stable_weight: stable_weight
+  last_weigh_in: last_weigh_in
+  raw_counts: raw_counts
+  problem: problem
+  status: status
+  weigh_in_event: weigh_in_event
+  led: status_led_out
+  calibration_weight: calibration_weight
+  calibration_factor: calibration_factor
+  display_unit: display_unit
+  report_mode: report_mode
+  report_threshold: report_threshold
+  report_interval: report_interval
+  stability_band: stability_band
+  min_weigh_in: min_weigh_in
+  capacity: capacity
+  auto_zero: auto_zero
+  led_mode: led_mode
+
+sensor:
+  - platform: hx711
+    id: hx711_raw
+    internal: true
+    dout_pin: ${hx711_dout_pin}
+    clk_pin: ${hx711_clk_pin}
+    gain: 128
+    update_interval: 125ms    # HX711 converts at 10/s (RATE tied low); 8/s never reads early
+    on_value:
+      - lambda: 'id(scale_core).add_raw(x);'
+
+  - platform: template
+    id: weight
+    name: "Weight"
+    unit_of_measurement: kg
+    device_class: weight
+    state_class: measurement
+    accuracy_decimals: 2
+    update_interval: never
+
+  - platform: template
+    id: stable_weight
+    name: "Stable weight"
+    unit_of_measurement: kg
+    device_class: weight
+    state_class: measurement
+    accuracy_decimals: 2
+    update_interval: never
+
+  - platform: template
+    id: last_weigh_in
+    name: "Last weigh-in"
+    unit_of_measurement: kg
+    device_class: weight
+    state_class: measurement
+    accuracy_decimals: 2
+    update_interval: never
+
+  - platform: template
+    id: raw_counts
+    name: "Raw counts"
+    entity_category: diagnostic
+    accuracy_decimals: 0
+    update_interval: never
+
+  - platform: internal_temperature
+    name: "Chip temperature"
+    entity_category: diagnostic
+    update_interval: 60s
+
+  - platform: wifi_signal
+    name: "Wi-Fi signal"
+    entity_category: diagnostic
+    update_interval: 60s
+
+  - platform: uptime
+    name: "Uptime"
+    entity_category: diagnostic
+    update_interval: 60s
+
+binary_sensor:
+  - platform: template
+    id: problem
+    name: "Problem"
+    device_class: problem
+
+text_sensor:
+  - platform: template
+    id: status
+    name: "Status"
+    update_interval: never
+
+  - platform: template
+    name: "Firmware version"
+    entity_category: diagnostic
+    update_interval: 1h
+    lambda: 'return {ESPHOME_PROJECT_VERSION};'
+
+event:
+  - platform: template
+    id: weigh_in_event
+    name: "Weigh-in"
+    event_types: [weigh_in]
+
+button:
+  - platform: template
+    name: "Zero"
+    on_press:
+      - lambda: 'id(scale_core).request_zero();'
+
+  - platform: template
+    name: "Calibrate"
+    on_press:
+      - lambda: 'id(scale_core).request_calibrate();'
+
+  - platform: restart
+    name: "Restart"
+    entity_category: diagnostic
+
+# ---- settings (spec section 4); all restored after reboots and updates ----
+
+number:
+  - platform: template
+    id: calibration_weight
+    name: "Calibration weight"
+    entity_category: config
+    unit_of_measurement: kg
+    device_class: weight
+    mode: box
+    min_value: 0.01
+    max_value: 500
+    step: 0.01
+    initial_value: 1.0
+    optimistic: true
+    restore_value: true
+
+  - platform: template
+    id: calibration_factor
+    name: "Calibration factor"
+    entity_category: config
+    unit_of_measurement: counts/kg
+    mode: box
+    min_value: -100000000
+    max_value: 100000000
+    step: 0.01
+    initial_value: 0
+    optimistic: true
+    restore_value: true
+
+  - platform: template
+    id: report_threshold
+    name: "Report threshold"
+    entity_category: config
+    unit_of_measurement: kg
+    mode: box
+    min_value: 0.01
+    max_value: 100
+    step: 0.01
+    initial_value: 0.1
+    optimistic: true
+    restore_value: true
+
+  - platform: template
+    id: report_interval
+    name: "Report interval"
+    entity_category: config
+    unit_of_measurement: s
+    mode: box
+    min_value: 1
+    max_value: 3600
+    step: 1
+    initial_value: 300
+    optimistic: true
+    restore_value: true
+
+  - platform: template
+    id: stability_band
+    name: "Stability band"
+    entity_category: config
+    unit_of_measurement: kg
+    mode: box
+    min_value: 0.005
+    max_value: 10
+    step: 0.005
+    initial_value: 0.1
+    optimistic: true
+    restore_value: true
+
+  - platform: template
+    id: min_weigh_in
+    name: "Minimum weigh-in"
+    entity_category: config
+    unit_of_measurement: kg
+    mode: box
+    min_value: 0.1
+    max_value: 500
+    step: 0.1
+    initial_value: 2.0
+    optimistic: true
+    restore_value: true
+
+  - platform: template
+    id: capacity
+    name: "Rated capacity"
+    entity_category: config
+    unit_of_measurement: kg
+    mode: box
+    min_value: 1
+    max_value: 2000
+    step: 1
+    initial_value: 200
+    optimistic: true
+    restore_value: true
+
+# Option order matters: scale.cpp refers to options by index.
+select:
+  - platform: template
+    id: display_unit
+    name: "Display unit"
+    entity_category: config
+    options: ["kg", "lb"]
+    initial_option: "kg"
+    optimistic: true
+    restore_value: true
+
+  - platform: template
+    id: report_mode
+    name: "Report mode"
+    entity_category: config
+    options: ["On change + heartbeat", "Fixed interval"]
+    initial_option: "On change + heartbeat"
+    optimistic: true
+    restore_value: true
+
+  - platform: template
+    id: led_mode
+    name: "Status LED"
+    entity_category: config
+    options: ["Off", "Status only", "Heartbeat", "Flash on weigh-in"]
+    initial_option: "Status only"
+    optimistic: true
+    restore_value: true
+
+switch:
+  - platform: template
+    id: auto_zero
+    name: "Auto-zero"
+    entity_category: config
+    optimistic: true
+    restore_mode: RESTORE_DEFAULT_OFF

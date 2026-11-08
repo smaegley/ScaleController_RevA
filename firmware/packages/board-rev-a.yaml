@@ -1,0 +1,29 @@
+# Scale Controller Rev-A board: ESP32-C3-WROOM-02, HX711, status LED, I2C header J9.
+# Rev-A has no usable buttons (SW1/SW2 must be removed, docs/bringup-2026-11-01.md).
+
+substitutions:
+  hx711_dout_pin: GPIO6
+  hx711_clk_pin: GPIO5
+  i2c_sda_pin: GPIO4
+  i2c_scl_pin: GPIO3
+
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: esp-idf
+
+logger:
+  hardware_uart: USB_SERIAL_JTAG
+
+i2c:
+  id: bus_a
+  sda: ${i2c_sda_pin}
+  scl: ${i2c_scl_pin}
+  scan: true
+
+output:
+  - platform: gpio
+    id: status_led_out
+    pin:
+      number: GPIO7
+      inverted: true          # D5 anode to 3.3V via R14: LOW lights it
