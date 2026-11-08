@@ -44,6 +44,8 @@ class Scale : public Component {
   void set_stable_weight_sensor(sensor::Sensor *s) { this->stable_weight_ = s; }
   void set_last_weigh_in_sensor(sensor::Sensor *s) { this->last_weigh_in_ = s; }
   void set_raw_counts_sensor(sensor::Sensor *s) { this->raw_counts_ = s; }
+  void set_live_weight_sensor(sensor::Sensor *s) { this->live_weight_ = s; }
+  void set_stable_sensor(binary_sensor::BinarySensor *s) { this->stable_sensor_ = s; }
   void set_problem_sensor(binary_sensor::BinarySensor *s) { this->problem_ = s; }
   void set_status_sensor(text_sensor::TextSensor *s) { this->status_sensor_ = s; }
   void set_weigh_in_event(event::Event *e) { this->weigh_in_event_ = e; }
@@ -84,6 +86,7 @@ class Scale : public Component {
   void update_weigh_in_(float live_kg, float stable_kg, uint32_t now);
   void track_zero_(float stable_kg, uint32_t now);
   void report_weight_(float live_kg, uint32_t now);
+  void publish_live_(float live_kg, uint32_t now);
   void save_zero_(bool now);
   void set_message_(const std::string &msg, uint32_t now, bool hold);
   void update_status_(uint32_t now);
@@ -119,6 +122,8 @@ class Scale : public Component {
   uint32_t last_report_ms_{0};
   bool reported_unavailable_{false};
   uint32_t last_raw_publish_ms_{0};
+  float last_live_published_{NAN};
+  uint32_t last_live_ms_{0};
 
   // status (6.6) and LED (6.7)
   std::string message_;
@@ -136,6 +141,8 @@ class Scale : public Component {
   sensor::Sensor *stable_weight_{nullptr};
   sensor::Sensor *last_weigh_in_{nullptr};
   sensor::Sensor *raw_counts_{nullptr};
+  sensor::Sensor *live_weight_{nullptr};
+  binary_sensor::BinarySensor *stable_sensor_{nullptr};
   binary_sensor::BinarySensor *problem_{nullptr};
   text_sensor::TextSensor *status_sensor_{nullptr};
   event::Event *weigh_in_event_{nullptr};

@@ -15,9 +15,13 @@ logger:
     hx711: INFO               # one reading every 125 ms would flood the log
     sensor: INFO
 
+# Our own page (web/scale-ui.js, spec 6.9) instead of ESPHome's: js_url "" stops the stock
+# page loading from the internet; the script is gzipped into the firmware and builds the UI.
 web_server:
   port: 80
   version: 3
+  js_url: ""
+  js_include: web/scale-ui.js
 
 scale:
   id: scale_core
@@ -25,6 +29,8 @@ scale:
   stable_weight: stable_weight
   last_weigh_in: last_weigh_in
   raw_counts: raw_counts
+  live_weight: live_weight
+  stable: stable
   problem: problem
   status: status
   weigh_in_event: weigh_in_event
@@ -79,6 +85,18 @@ sensor:
     accuracy_decimals: 2
     update_interval: never
 
+  # Fast-updating weight and stability flag for the web page; hidden in HA by default
+  # so they don't fill its history. Use "Weight" / "Stable weight" in automations.
+  - platform: template
+    id: live_weight
+    name: "Live weight"
+    unit_of_measurement: kg
+    device_class: weight
+    accuracy_decimals: 3
+    entity_category: diagnostic
+    disabled_by_default: true
+    update_interval: never
+
   - platform: template
     id: raw_counts
     name: "Raw counts"
@@ -106,6 +124,12 @@ binary_sensor:
     id: problem
     name: "Problem"
     device_class: problem
+
+  - platform: template
+    id: stable
+    name: "Stable"
+    entity_category: diagnostic
+    disabled_by_default: true
 
 text_sensor:
   - platform: template

@@ -163,15 +163,15 @@ Requirements:
   controls, smooth live updates without flicker.
 - **Served entirely from the device** — no CDN or internet access needed; the scale may sit
   on a network with no internet access.
-- Small: plain JS/CSS (or a tiny framework), bundled and gzipped into the firmware,
-  target ≤ 60 KB.
+- Small: plain JS/CSS, gzipped into the firmware, target ≤ 60 KB (v0.1: ~8 KB).
+  Live updates come from two extra entities, hidden in HA by default: Live weight (4/s)
+  and Stable.
 - Talks to ESPHome's own web-server API (the `/events` stream and the REST endpoints), so it
-  needs no extra component on the device. The stock ESPHome page stays reachable as a
-  fallback for debugging.
+  needs no extra component on the device. The stock ESPHome page stays reachable from
+  Settings → Diagnostics as a fallback for debugging (that one loads from the internet).
 - Same look reused for the web installer page (§2), so the product feels consistent.
 
-Cost: a small front-end build step in the repo (source + bundled output), and re-testing the
-page when ESPHome changes its web-server API.
+Cost: re-testing the page when ESPHome changes its web-server API.
 
 ## 7. Package layout
 
@@ -185,9 +185,10 @@ firmware/
   scale-controller.yaml  example top-level config (copy-the-YAML users)
   web-installer.yaml     build for ESP Web Tools / pre-flashed boards
   smoke-test.yaml        bring-up only
+  components/scale/      weighing logic (C++ external component)
   web/
-    src/                 scale web page source (§6.9)
-    dist/                bundled, gzipped page included in the firmware
+    scale-ui.js          scale web page (§6.9), one self-contained file; ESPHome gzips it
+                         into the firmware (`web_server: js_include`), no build step
 ```
 
 Logic beyond a few lines goes in a small C++ header (`firmware/packages/scale.h`) rather than

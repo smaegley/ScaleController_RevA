@@ -40,6 +40,8 @@ LINKS = {
     "stable_weight": (sensor.Sensor, "set_stable_weight_sensor"),
     "last_weigh_in": (sensor.Sensor, "set_last_weigh_in_sensor"),
     "raw_counts": (sensor.Sensor, "set_raw_counts_sensor"),
+    "live_weight": (sensor.Sensor, "set_live_weight_sensor"),
+    "stable": (binary_sensor.BinarySensor, "set_stable_sensor"),
     "problem": (binary_sensor.BinarySensor, "set_problem_sensor"),
     "status": (text_sensor.TextSensor, "set_status_sensor"),
     "weigh_in_event": (event.Event, "set_weigh_in_event"),

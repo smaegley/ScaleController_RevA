@@ -30,6 +30,9 @@ static constexpr uint32_t PENDING_TIMEOUT_MS = 15000;
 static constexpr uint32_t MESSAGE_MS = 15000;
 static constexpr uint32_t MIN_REPORT_GAP_MS = 500;
 static constexpr uint32_t RAW_PUBLISH_MS = 5000;
+static constexpr uint32_t LIVE_PUBLISH_MS = 250;     // web page refresh rate
+static constexpr uint32_t LIVE_HEARTBEAT_MS = 5000;
+static constexpr float LIVE_MIN_CHANGE_KG = 0.002f;
 static constexpr uint32_t AUTO_ZERO_SAVE_MS = 10 * 60 * 1000;
 static constexpr uint32_t STATUS_PERIOD_MS = 500;
 static constexpr uint32_t STARTUP_GRACE_MS = 5000;
@@ -139,6 +142,10 @@ void Scale::add_raw(float raw) {
 
   this->run_pending_(now);
 
+  if (this->stable_sensor_ != nullptr &&
+      (!this->stable_sensor_->has_state() || this->stable_sensor_->state != this->stable_))
+    this->stable_sensor_->publish_state(this->stable_);
+
   if (this->raw_counts_ != nullptr && now - this->last_raw_publish_ms_ >= RAW_PUBLISH_MS) {
     this->last_raw_publish_ms_ = now;
     this->raw_counts_->publish_state(this->mean_raw_);
@@ -147,6 +154,8 @@ void Scale::add_raw(float raw) {
   if (!this->calibrated_()) {
     if (!this->reported_unavailable_) {
       this->weight_->publish_state(NAN);
+      this->live_weight_->publish_state(NAN);
+      this->last_live_published_ = NAN;
       this->reported_unavailable_ = true;
     }
     this->weigh_in_ = WeighIn::UNKNOWN;
@@ -167,6 +176,20 @@ void Scale::add_raw(float raw) {
 
   this->update_weigh_in_(live_kg, stable_kg, now);
   this->report_weight_(live_kg, now);
+  this->publish_live_(live_kg, now);
+}
+
+// Fast weight for the web page and OLED; disabled by default in HA (spec 6.9).
+void Scale::publish_live_(float live_kg, uint32_t now) {
+  if (this->live_weight_ == nullptr || now - this->last_live_ms_ < LIVE_PUBLISH_MS)
+    return;
+  if (!std::isnan(this->last_live_published_) &&
+      std::fabs(live_kg - this->last_live_published_) < LIVE_MIN_CHANGE_KG &&
+      now - this->last_live_ms_ < LIVE_HEARTBEAT_MS)
+    return;
+  this->last_live_published_ = live_kg;
+  this->last_live_ms_ = now;
+  this->live_weight_->publish_state(live_kg);
 }
 
 // ---- Zero and Calibrate (6.1, 6.2) ----
