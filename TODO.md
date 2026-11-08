@@ -73,11 +73,11 @@ Updated 2026-11-01. See docs/status-2026-09-18.md (design) and docs/bringup-2026
 	•	[ ] I²C scan → detect OLED at 0x3C
 	•	[x] HX711 baseline counts stable (no load): ±50 counts
 	•	[x] LC1 + LC4: presses move the reading the same direction (inversion OK)
-	•	[ ] Check sockets LC2 and LC3; repair the socket damaged on board #1
+	•	[x] All four cells in a puck: same direction, ~−220k counts per press; damaged socket repaired (2026-11-08)
 	•	[ ] Build 4 pucks + test rig
 	•	[ ] Calibrate with 1000 g mass
 	•	[ ] Corner test: ±200 g per corner, <1% error
-	•	[ ] Wi-Fi test → confirm stable readings under RF load
+	•	[x] Wi-Fi test → noise ±50 counts with Wi-Fi on, 21 h without dropouts (2026-11-09)
 
 ⸻
 
