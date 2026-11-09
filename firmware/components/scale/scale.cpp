@@ -14,6 +14,10 @@
 #ifdef USE_API
 #include "esphome/components/api/api_server.h"
 #endif
+#if defined(USE_WEBSERVER) && defined(USE_ESP_IDF)
+#include <esp_http_server.h>
+#include "esphome/components/web_server_base/web_server_base.h"
+#endif
 
 namespace esphome {
 namespace scale {
@@ -36,6 +40,10 @@ static constexpr float LIVE_MIN_CHANGE_KG = 0.002f;
 static constexpr uint32_t AUTO_ZERO_SAVE_MS = 10 * 60 * 1000;
 static constexpr uint32_t STATUS_PERIOD_MS = 500;
 static constexpr uint32_t STARTUP_GRACE_MS = 5000;
+static constexpr uint32_t LED_ISSUE_PERIOD_MS = 333;   // 3 blinks/s: not connected, or a fault
+static constexpr uint32_t LED_OK_PERIOD_MS = 2000;     // 1 blink every 2 s: connected
+static constexpr uint32_t LED_BLINK_MS = 80;
+static constexpr uint32_t CLIENT_CHECK_MS = 1000;
 
 // Option order of the selects in scale-core.yaml
 static constexpr size_t REPORT_FIXED = 1;
@@ -375,28 +383,47 @@ void Scale::update_status_(uint32_t now) {
 
 // ---- status LED (6.7) ----
 
+// Connected = on Wi-Fi and either HA (API client) or a browser (any open socket on the web
+// server: the page keeps its /events stream open while it is showing).
+bool Scale::client_connected_now_() const {
+#ifdef USE_WIFI
+  if (wifi::global_wifi_component != nullptr && !wifi::global_wifi_component->is_connected())
+    return false;
+#endif
+#ifdef USE_API
+  if (api::global_api_server != nullptr && api::global_api_server->is_connected())
+    return true;
+#endif
+#if defined(USE_WEBSERVER) && defined(USE_ESP_IDF)
+  auto *base = web_server_base::global_web_server_base;
+  if (base != nullptr && base->get_server() != nullptr && base->get_server()->get_server() != nullptr) {
+    int fds[CONFIG_LWIP_MAX_SOCKETS];
+    size_t n = CONFIG_LWIP_MAX_SOCKETS;
+    if (httpd_get_client_list(base->get_server()->get_server(), &n, fds) == ESP_OK && n > 0)
+      return true;
+  }
+#endif
+  return false;
+}
+
 void Scale::update_led_(uint32_t now) {
   if (this->led_ == nullptr)
     return;
+  if (now - this->last_client_check_ms_ >= CLIENT_CHECK_MS) {
+    this->last_client_check_ms_ = now;
+    this->client_connected_ = this->client_connected_now_();
+  }
   const size_t mode = this->index_(this->led_mode_);
-  bool issue = this->fault_;
-#ifdef USE_WIFI
-  if (wifi::global_wifi_component != nullptr && !wifi::global_wifi_component->is_connected())
-    issue = true;
-#endif
-#ifdef USE_API
-  if (api::global_api_server != nullptr && !api::global_api_server->is_connected())
-    issue = true;
-#endif
+  const bool issue = this->fault_ || !this->client_connected_;
   bool on = false;
   if (mode == LED_OFF) {
     on = false;
   } else if (issue) {
-    on = (now / 250) % 2 == 0;
-  } else if (mode == LED_HEARTBEAT) {
-    on = now % 3000 < 60;
+    on = now % LED_ISSUE_PERIOD_MS < LED_BLINK_MS;
   } else if (mode == LED_WEIGH_IN && (int32_t) (this->flash_until_ms_ - now) > 0) {
     on = ((this->flash_until_ms_ - now) / 150) % 2 == 0;
+  } else {
+    on = now % LED_OK_PERIOD_MS < LED_BLINK_MS;
   }
   if (on != this->led_on_ || !this->led_written_) {
     this->led_on_ = on;

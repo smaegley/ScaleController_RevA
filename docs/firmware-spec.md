@@ -134,9 +134,12 @@ Meant for bathroom use; leave off for kegs, food bins, beds.
 ### 6.7 Status LED (setting)
 
 - off
-- status only — blink while Wi-Fi/HA are down or a fault is active, otherwise off
-- heartbeat — short blink every few seconds
+- status only — 3 blinks/s while nothing is connected (no Wi-Fi, or neither HA nor a browser
+  on the web page) or a fault is active; otherwise 1 blink every 2 s
+- heartbeat — currently the same as status only (kept so saved settings keep their meaning)
 - flash on weigh-in — status only, plus a flash per weigh-in
+
+(Changed 9 Nov 2026 at Steve's request: connected used to be LED off, and only HA counted.)
 
 ### 6.8 OLED (optional package `oled.yaml`)
 

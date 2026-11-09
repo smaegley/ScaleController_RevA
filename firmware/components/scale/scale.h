@@ -91,6 +91,7 @@ class Scale : public Component {
   void set_message_(const std::string &msg, uint32_t now, bool hold);
   void update_status_(uint32_t now);
   void update_led_(uint32_t now);
+  bool client_connected_now_() const;
 
   // readings
   float buf_[WINDOW]{};
@@ -136,6 +137,8 @@ class Scale : public Component {
   uint32_t flash_until_ms_{0};
   bool led_on_{false};
   bool led_written_{false};
+  bool client_connected_{false};
+  uint32_t last_client_check_ms_{0};
 
   sensor::Sensor *weight_{nullptr};
   sensor::Sensor *stable_weight_{nullptr};
