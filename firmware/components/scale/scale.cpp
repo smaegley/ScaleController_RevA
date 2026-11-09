@@ -141,7 +141,7 @@ void Scale::add_raw(float raw) {
   this->live_raw_ = live_sum / live_n;
 
   // 6.3: stable = every reading in the window within the Stability band
-  const float f = this->factor_();
+  float f = this->factor_();
   const bool have_factor = std::isfinite(f) && std::fabs(f) >= 1.0f;
   const float band = this->setting_(this->stability_band_, 0.1f);
   const float spread = hi - lo;
@@ -149,6 +149,7 @@ void Scale::add_raw(float raw) {
                   (have_factor ? spread / std::fabs(f) <= band : spread <= UNCALIBRATED_STABLE_COUNTS);
 
   this->run_pending_(now);
+  f = this->factor_();  // Calibrate may just have changed it (was 0 on a first calibration)
 
   if (this->stable_sensor_ != nullptr &&
       (!this->stable_sensor_->has_state() || this->stable_sensor_->state != this->stable_))
