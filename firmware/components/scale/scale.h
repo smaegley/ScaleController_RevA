@@ -94,6 +94,8 @@ class Scale : public Component {
   bool client_connected_now_() const;
 
   // readings
+  float recent_[3]{};
+  uint32_t recent_n_{0};
   float buf_[WINDOW]{};
   int head_{0};
   int count_{0};

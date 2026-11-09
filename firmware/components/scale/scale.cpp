@@ -120,6 +120,14 @@ void Scale::add_raw(float raw) {
     return;
   const uint32_t now = millis();
   this->last_sample_ms_ = now;
+  // Median of the last 3 readings: drops a single corrupted HX711 read (seen on the rig: one
+  // read of 0xfffef7 in the middle of -577k readings showed as -91 kg in HA). Costs 125 ms.
+  this->recent_[this->recent_n_ % 3] = raw;
+  this->recent_n_++;
+  if (this->recent_n_ >= 3) {
+    const float a = this->recent_[0], b = this->recent_[1], c = this->recent_[2];
+    raw = std::max(std::min(a, b), std::min(std::max(a, b), c));
+  }
   this->saturated_ = std::fabs(raw) >= SATURATION_COUNTS;
 
   this->buf_[this->head_] = raw;
